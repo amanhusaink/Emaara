@@ -80,65 +80,154 @@ with our custom-designed travel packages for every adventurer.
 
 
 <!-- SEARCH BAR -->
-<div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-[900px] max-w-[95%] z-30">
+<div class="absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 w-full px-4 sm:px-6 md:px-12 z-30">
 
-<div class="bg-white rounded-full shadow-xl flex items-center justify-between px-6 py-5">
+<div class="bg-white rounded-2xl sm:rounded-full shadow-xl flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-0 sm:gap-3 px-4 sm:px-6 py-4 sm:py-5 border border-gray-200">
 
-<!-- LOCATION -->
-<div class="flex items-center gap-3">
+ <div class="flex items-center gap-3 px-2 sm:px-4 py-2 w-full sm:w-1/4 border-b sm:border-b-0 sm:border-r border-gray-200">
+      <div class="bg-blue-100 p-2 rounded-full flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      </div>
+      <div class="w-full min-w-0">
+        <p class="text-xs sm:text-sm font-semibold text-gray-800">Location</p>
+        <input type="text" id="location" placeholder="Enter destination" class="text-xs text-gray-500 outline-none w-full bg-transparent">
+      </div>
+    </div>
 
-<div class="bg-blue-100 p-2 rounded-full">
-📍
-</div>
+    <!-- Date -->
+    <div class="flex items-center gap-3 px-2 sm:px-4 py-2 w-full sm:w-1/4 border-b sm:border-b-0 sm:border-r border-gray-200">
+      <div class="bg-purple-100 p-2 rounded-full flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </div>
+      <div class="w-full min-w-0">
+        <p class="text-xs sm:text-sm font-semibold text-gray-800">Date</p>
+        <input type="date" id="date" class="text-xs text-gray-500 outline-none w-full bg-transparent">
+      </div>
+    </div>
 
-<div>
-<p class="font-semibold text-sm">Location</p>
-<p class="text-gray-400 text-xs">Enter your destination</p>
-</div>
+    <!-- Price -->
+    <div class="flex items-center gap-3 px-2 sm:px-4 py-2 w-full sm:w-1/4 border-b sm:border-b-0 border-gray-200">
+      <div class="bg-green-100 p-2 rounded-full flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0-6v2m0 16v2m8-10h2M2 12H0m15.364-6.364l1.414 1.414M5.222 18.778l-1.414 1.414m0-14.142l1.414 1.414m12.728 12.728l1.414 1.414" />
+        </svg>
+      </div>
+      <div class="w-full min-w-0">
+        <p class="text-xs sm:text-sm font-semibold text-gray-800">Price</p>
+        <input type="number" id="price" placeholder="Budget" class="text-xs text-gray-500 outline-none w-full bg-transparent">
+      </div>
+    </div>
 
-</div>
-
-
-<!-- DATE -->
-<div class="flex items-center gap-3">
-
-<div class="bg-purple-100 p-2 rounded-full">
-📅
-</div>
-
-<div>
-<p class="font-semibold text-sm">Date</p>
-<p class="text-gray-400 text-xs">Choose your dates</p>
-</div>
-
-</div>
-
-
-<!-- PRICE -->
-<div class="flex items-center gap-3">
-
-<div class="bg-green-100 p-2 rounded-full">
-💲
-</div>
-
-<div>
-<p class="font-semibold text-sm">Price</p>
-<p class="text-gray-400 text-xs">Enter your budget</p>
-</div>
-
-</div>
-
-
-<!-- BUTTON -->
-<button class="bg-[#033D5B] text-white px-6 py-3 rounded-full flex items-center gap-2">
-Find My Adventure 🔍
+    <!-- Button -->
+    <div class="w-full sm:w-auto pt-3 sm:pt-0">
+      <button onclick="redirectToWhatsApp()" class="bg-[#0D3B4C] text-white px-4 sm:px-6 py-3 rounded-xl sm:rounded-full flex items-center hover:bg-[#0b3342] transition w-full sm:w-[180px] justify-center cursor-pointer">
+  <span class="md:text-[13px] sm:text-[16px]">Find Adventure</span>
+  
+  <span class="bg-[#1E566B] p-2 rounded-full flex items-center justify-center flex-shrink-0">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="h-3 w-3 sm:h-4 sm:w-4 text-white" 
+         fill="none" 
+         viewBox="0 0 24 24" 
+         stroke="currentColor">
+      <path stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z"/>
+    </svg>
+  </span>
 </button>
+    </div>
 
 </div>
 
 </div>
 
 </section>
+
+<!-- Banner -->
+<div class="w-full bg-[#0D3B4C] py-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 text-white">
+
+    <!-- Item 1 -->
+    <div class="flex items-center gap-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+          d="M9 20l-5.447-2.724A2 2 0 013 15.382V5a2 2 0 012-2h6m0 18l6-3m-6 3V3m6 15l5.447-2.724A2 2 0 0021 13.382V5a2 2 0 00-2-2h-6m0 0v18"/>
+      </svg>
+      <h2 class="text-2xl md:text-3xl font-semibold">Travel Planning</h2>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="flex items-center gap-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+          d="M12 8c-1.657 0-3 1.343-3 3v5h6v-5c0-1.657-1.343-3-3-3zm0 0V6m0 12v2m8-10h-2M6 10H4m12.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m0 12.728l1.414-1.414M18.364 5.636l-1.414 1.414"/>
+      </svg>
+      <h2 class="text-2xl md:text-3xl font-semibold">Visa Assistance</h2>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="flex items-center gap-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+          d="M3 7h18M3 12h18M3 17h18"/>
+      </svg>
+      <h2 class="text-2xl md:text-3xl font-semibold">Global Reach Immigration</h2>
+    </div>
+
+  </div>
+</div>
+<!-- WhatsApp Redirect Script -->
+<script>
+function redirectToWhatsApp() {
+  // Get input values
+  const location = document.getElementById('location').value.trim();
+  const date = document.getElementById('date').value;
+  const price = document.getElementById('price').value;
+  
+  // Format date if provided
+  let formattedDate = '';
+  if (date) {
+    const dateObj = new Date(date);
+    formattedDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  
+  // Build message
+  let message = '*Hi! I want to plan my adventure* 🌍\n\n';
+  message += '*Trip Details:*\n';
+  
+  if (location) {
+    message += `📍 *Destination:* ${location}\n`;
+  }
+  
+  if (formattedDate) {
+    message += `📅 *Travel Date:* ${formattedDate}\n`;
+  }
+  
+  if (price) {
+    message += `💰 *Budget:* $${price}\n`;
+  }
+  
+  message += '\nPlease help me plan my trip! Thank you.';
+  
+  // Encode for URL
+  const encodedMessage = encodeURIComponent(message);
+  
+  // WhatsApp number (replace with your actual number)
+  const whatsappNumber = '911234554321'; // Format: country code + number (no + or spaces)
+  
+  // Create WhatsApp URL
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+  // Open WhatsApp
+  window.open(whatsappUrl, '_blank');
+}
+</script>
 
 
 
