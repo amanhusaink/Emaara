@@ -314,17 +314,25 @@ function redirectToWhatsApp() {
     <!-- Right Side Graphic -->
     <div class="relative flex justify-center items-center">
       
-      <!-- Back Card -->
-      <div class="w-56 h-72 border-2 border-[#033D5B] rounded-xl transform rotate-6 absolute"></div>
-      
-      <!-- Front Card -->
-      <div class="w-56 h-72 border-2 border-[#033D5B] rounded-xl transform -rotate-6 bg-gray-100"></div>
-<!-- Arrow -->
-      <div class="absolute -top-6 right-10 text-[#033D5B] text-2xl">
-        <img src="components/Frame.png" class="w-8 h-8"/>
-      </div>
-      
+     <div class="relative w-full max-w-[520px] h-[500px]  bg-gray-100 mx-auto">
+ <!-- Arrow -->
+  <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-bounce" width="80" height="80" viewBox="0 0 100 100">
+    <path d="M20,60 C20,20 80,20 80,50" stroke="#0f3d4a" stroke-width="3" fill="none" stroke-dasharray="6,6"/>
+    <polygon points="75,45 85,50 75,55" fill="#0f3d4a"/>
+  </svg>
+  <!-- Back Card -->
+  <div class="absolute w-[260px] h-[384px] border-2 border-teal-800 rounded-2xl 
+              rotate-[12deg] top-10 right-20 bg-gray-200">
+  </div>
 
+  <!-- Front Card -->
+  <div class="absolute w-[260px] h-[357px] border-4 border-teal-900 rounded-2xl 
+              -rotate-[15deg] top-20 left-16 bg-gray-200 shadow-lg">
+  </div>
+
+ 
+
+</div>
     </div>
 
   </div>
