@@ -18,45 +18,42 @@
   <div class="min-h-screen bg-[url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center relative">
 
 <!-- HERO SECTION -->
-<section class="relative h-screen w-full">
+<section id="home" class="relative h-screen w-full">
 
 <!-- BACKGROUND IMAGE -->
 <img src="components/Mainbg.png"
 class="absolute w-full h-full object-cover"/>
 
-<!-- DARK OVERLAY -->
-<div class="absolute inset-0 bg-black/30"></div>
-
 
 <!-- NAVBAR -->
-<div class="relative z-20 max-w-7xl mx-auto px-6 pt-6">
-
-<div class="flex items-center justify-between">
+<div id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 pt-6">
+    <div class="flex items-center justify-between">
 
 <!-- LOGO -->
-<div class="flex items-center gap-2 text-white font-bold text-xl">
-<div class="bg-white text-blue-600 px-2 py-1 rounded font-black">Z</div>
-EMAARA
+<div class="flex items-center gap-2">
+<img src="components/assets/emara logo white.png" alt="Emaara Logo" class="h-10 w-auto">
 </div>
 
 <!-- MENU -->
-<div class="hidden md:flex items-center bg-white/20 backdrop-blur-md rounded-full px-2 py-2 text-white gap-6">
+<div class="hidden md:flex items-center bg-white/20 rounded-full px-6 py-2 text-white gap-6">
 
-<a class="bg-white text-blue-600 px-4 py-1 rounded-full text-sm font-medium">Home</a>
+<a href="#home" class="nav-link active px-4 py-2 rounded-full text-sm font-medium transition-all">Home</a>
 
-<a class="text-sm">Destination ▾</a>
-<a class="text-sm">Packages ▾</a>
-<a class="text-sm">Contact</a>
+<a href="#find-perfect-trip" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Destination</a>
+<a href="#find-perfect-trip" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Packages</a>
+<a href="#get-in-touch" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Contact</a>
 
 </div>
 
 <!-- BUTTON -->
-<button class="bg-white rounded-full px-6 py-2 flex items-center gap-2 font-medium">
+<button class="bg-white rounded-full text-black px-6 py-2 flex items-center gap-2 font-medium">
 Plan Your Trip
 <span class="bg-blue-600 text-white rounded-full px-2">→</span>
 </button>
 
-</div>
+    </div>
+  </div>
 </div>
 
 
@@ -125,7 +122,7 @@ with our custom-designed travel packages for every adventurer.
 
     <!-- Button -->
     <div class="w-full sm:w-auto pt-3 sm:pt-0">
-      <button onclick="redirectToWhatsApp()" class="bg-[#0D3B4C] text-white px-4 sm:px-6 py-3 rounded-xl sm:rounded-full flex items-center hover:bg-[#0b3342] transition w-full sm:w-[180px] justify-center cursor-pointer">
+      <button onclick="redirectToWhatsApp()" class="bg-[#0D3B4C] text-white px-4 sm:px-6 py-3 rounded-xl sm:rounded-full flex items-center gap-2 hover:bg-[#0b3342] transition w-full sm:w-auto justify-center cursor-pointer whitespace-nowrap">
   <span class="md:text-[13px] sm:text-[16px]">Find Adventure</span>
   
   <span class="bg-[#1E566B] p-2 rounded-full flex items-center justify-center flex-shrink-0">
@@ -219,7 +216,7 @@ function redirectToWhatsApp() {
   const encodedMessage = encodeURIComponent(message);
   
   // WhatsApp number (replace with your actual number)
-  const whatsappNumber = '911234554321'; // Format: country code + number (no + or spaces)
+  const whatsappNumber = '917510197110'; // Format: country code + number (no + or spaces)
   
   // Create WhatsApp URL
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -232,7 +229,7 @@ function redirectToWhatsApp() {
 
 
 <!-- SERVICES SECTION -->
-<section class="bg-gray-100 py-16 px-6 md:px-16">
+<section id="destination" class="bg-gray-100 py-16 px-6 md:px-16">
   <!-- Heading -->
   <div class="text-center mb-12 relative flex flex-col items-center justify-center">
 
@@ -337,7 +334,7 @@ function redirectToWhatsApp() {
 
   </div>
 </section>
-<section class="bg-[#f5f5f5] py-20 px-6 md:px-20">
+<section id="packages" class="bg-[#f5f5f5] py-20 px-6 md:px-20">
 
   <!-- Heading -->
   <div class="text-center mb-14 relative flex flex-col items-center">
@@ -594,7 +591,7 @@ function redirectToWhatsApp() {
 </section>
 
 <!-- FEATURED DESTINATIONS SECTION -->
-<section class="bg-white py-20 px-6 md:px-16">
+<section id="find-perfect-trip" class="bg-white py-20 px-6 md:px-16">
   <div class="max-w-5xl mx-auto text-center mb-10">
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Find Your Perfect Trip</h2>
     <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.</p>
@@ -694,7 +691,7 @@ function redirectToWhatsApp() {
   </div>
 </section>
 
-<section class="bg-white py-20 px-6 md:px-16">
+<section id="get-in-touch" class="bg-white py-20 px-6 md:px-16">
   <div class="max-w-5xl mx-auto text-center mb-10 relative">
     <span class="absolute text-6xl md:text-7xl font-extrabold text-gray-200 opacity-40 inset-x-0 top-0">CONTACT US</span>
     <div class="relative z-10">
@@ -733,7 +730,7 @@ function redirectToWhatsApp() {
         <p class="mt-4 text-sm text-slate-600">Lorem ipsum is simply dummy text the printing and typesetting industry’s standard dummy text ever.</p>
       </div>
       <div class="mt-6 space-y-3 text-sm text-slate-700">
-        <div class="flex items-center gap-3"><span>📞</span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]">+91 12345 54321</p></div></div>
+        <div class="flex items-center gap-3"><span>📞</span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
         <div class="flex items-center gap-3"><span>🕒</span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
         <div class="flex items-center gap-3"><span>📍</span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
       </div>
@@ -741,7 +738,7 @@ function redirectToWhatsApp() {
   </div>
 </section>
 
-<section class="bg-[#033D5B] text-white">
+<section id="contact" class="bg-[#033D5B] text-white">
 
   <!-- TOP BAR -->
   <div class="border-b border-white/20 px-6 md:px-20 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -811,7 +808,8 @@ function redirectToWhatsApp() {
     <div class="relative z-10">
       <h3 class="text-sm font-semibold mb-4">REACH US</h3>
       <ul class="space-y-2 text-sm opacity-80">
-        <li>+91 12345 54321</li>
+        <li><a href="tel:+917510197110" class="hover:text-white transition">+91 7510197110</a></li>
+        <li><a href="https://wa.me/917510197110" target="_blank" class="hover:text-white transition">WhatsApp</a></li>
         <li>emaaratravels@gmail.com</li>
       </ul>
     </div>
@@ -834,5 +832,71 @@ function redirectToWhatsApp() {
 
 </section>
   </div>
+
+  <script>
+    // Navbar Active State Management
+    function setActiveNavLink() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = ['home', 'destination', 'packages', 'contact'];
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Remove active state from all links
+          navLinks.forEach(l => {
+            l.classList.remove('bg-white', 'text-blue-600');
+            l.classList.add('hover:bg-white/20');
+          });
+          
+          // Add active state to clicked link
+          this.classList.add('bg-white', 'text-blue-600');
+          this.classList.remove('hover:bg-white/20');
+          
+          // Optional: Scroll to section (if sections exist)
+          const target = this.getAttribute('href').substring(1);
+          const section = document.getElementById(target);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', setActiveNavLink);
+    
+    // Also update active state on scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section');
+      
+      // Hide navbar when scrolled down
+      if (window.scrollY > 100) {
+        navbar.style.display = 'none';
+      } else {
+        navbar.style.display = 'block';
+      }
+      
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('bg-white', 'text-blue-600');
+        link.classList.add('hover:bg-white/20');
+        
+        if (link.getAttribute('href').substring(1) === currentSection) {
+          link.classList.add('bg-white', 'text-blue-600');
+          link.classList.remove('hover:bg-white/20');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
