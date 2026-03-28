@@ -12,66 +12,556 @@
         backdrop-filter: blur(6px);
       }
     }
+    
+    /* Hero Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+      }
+    }
+    
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .animate-slide-in-down {
+      animation: slideInDown 0.6s ease-out forwards;
+    }
+    
+    .animate-scale-in {
+      animation: scaleIn 0.7s ease-out forwards;
+    }
+    
+    .animate-pulse-glow {
+      animation: pulse-glow 2s infinite;
+    }
+    
+    .hero-title {
+      animation: fadeInUp 1s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+    
+    .hero-subtitle {
+      animation: fadeInUp 1s ease-out 0.5s forwards;
+      opacity: 0;
+    }
+    
+    .hero-description {
+      animation: fadeInUp 1s ease-out 0.7s forwards;
+      opacity: 0;
+    }
+    
+    .hero-search {
+      animation: slideInDown 1s ease-out 0.9s forwards;
+      opacity: 0;
+    }
+    
+    /* Services Section Animations */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes cardHover {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+    
+    .service-card {
+      animation: slideInLeft 0.6s ease-out forwards;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .service-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    
+    .service-card:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    
+    .service-card:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-icon {
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .graphics-section {
+      animation: slideInRight 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+    
+    /* Image Cards Animation */
+    @keyframes rotateIn {
+      from {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: rotate(var(--rotation)) scale(1);
+      }
+    }
+    
+    .back-card {
+      --rotation: 12deg;
+      animation: rotateIn 0.7s ease-out 0.5s forwards;
+      opacity: 0;
+    }
+    
+    .front-card {
+      --rotation: -15deg;
+      animation: rotateIn 0.7s ease-out 0.8s forwards;
+      opacity: 0;
+    }
+    
+    .arrow-svg {
+      animation: slideInDown 0.6s ease-out 0.3s forwards, bounce 2s infinite 1.5s;
+      opacity: 0;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    /* Destination Cards Animation */
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .destination-card {
+      animation: zoomIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .destination-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    
+    .destination-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .destination-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    
+    .destination-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    
+    .destination-card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+    
+    .destination-card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+    
+    .destination-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    /* Destination Section Heading Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .destination-section-heading {
+      animation: fadeInDown 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .destination-bg-text {
+      animation: fadeIn 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+    
+    .destination-title {
+      animation: fadeInDown 0.8s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+    
+    .destination-description {
+      animation: fadeInUp 0.8s ease-out 0.6s forwards;
+      opacity: 0;
+    }
+    
+    .destination-grid {
+      animation: fadeIn 0.6s ease-out 0.8s forwards;
+      opacity: 0;
+    }
+    
+    /* Trusted Travel Partner Section - Scroll Animations */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .center-image {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    
+    .center-image.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .left-card {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.6s ease-out;
+    }
+    
+    .left-card.scrolled {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .left-card:nth-child(1).scrolled {
+      transition-delay: 0.3s;
+    }
+    
+    .left-card:nth-child(2).scrolled {
+      transition-delay: 0.5s;
+    }
+    
+    .right-card {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all 0.6s ease-out;
+    }
+    
+    .right-card.scrolled {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .right-card:nth-child(1).scrolled {
+      transition-delay: 0.3s;
+    }
+    
+    .right-card:nth-child(2).scrolled {
+      transition-delay: 0.5s;
+    }
+    
+    .right-card:nth-child(3).scrolled {
+      transition-delay: 0.7s;
+    }
+    
+    /* Visa Services Section Animations */
+    .visa-section-heading {
+      animation: fadeInDown 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .visa-bg-text {
+      animation: fadeIn 0.8s ease-out 0.2s forwards;
+      opacity: 0;
+    }
+    
+    .visa-title {
+      animation: fadeInDown 0.8s ease-out 0.4s forwards;
+      opacity: 0;
+    }
+    
+    .visa-description {
+      animation: fadeInUp 0.8s ease-out 0.6s forwards;
+      opacity: 0;
+    }
+    
+    @keyframes flipIn {
+      from {
+        opacity: 0;
+        transform: rotateY(90deg);
+      }
+      to {
+        opacity: 1;
+        transform: rotateY(0);
+      }
+    }
+    
+    .visa-card {
+      animation: flipIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+      perspective: 1000px;
+    }
+    
+    .visa-card:nth-child(1) {
+      animation-delay: 0.8s;
+    }
+    
+    .visa-card:nth-child(2) {
+      animation-delay: 1s;
+    }
+    
+    .visa-card:nth-child(3) {
+      animation-delay: 1.2s;
+    }
+    
+    .visa-card:nth-child(4) {
+      animation-delay: 1.4s;
+    }
+    
+    /* Find Your Perfect Trip Section */
+    .perfect-trip-heading {
+      animation: fadeInDown 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .perfect-trip-card {
+      animation: slideInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .perfect-trip-card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    
+    .perfect-trip-card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    
+    .perfect-trip-card:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    
+    .perfect-trip-card:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+    
+    .perfect-trip-card:nth-child(5) {
+      animation-delay: 1s;
+    }
+    
+    .perfect-trip-card:nth-child(6) {
+      animation-delay: 1.2s;
+    }
+    
+    /* Founder Section */
+    .founder-heading {
+      animation: fadeInDown 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .founder-image {
+      animation: slideInLeft 0.8s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+    
+    .founder-quote {
+      animation: slideInRight 0.8s ease-out 0.5s forwards;
+      opacity: 0;
+    }
+    
+    /* Contact Section */
+    .contact-heading {
+      animation: fadeInDown 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .contact-form {
+      animation: slideInUp 0.8s ease-out 0.3s forwards;
+      opacity: 0;
+    }
+    
+    .contact-info {
+      animation: slideInUp 0.8s ease-out 0.5s forwards;
+      opacity: 0;
+    }
+    
+    /* Footer Section */
+    .footer-content {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .marquee-container {
+      overflow: hidden;
+      background: #0D3B4C;
+      width: 100%;
+      padding: 2rem;
+    }
+    
+    .marquee-content {
+      display: flex;
+      gap: 3rem;
+    }
+    
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+      width: calc(33.333% - 2rem);
+      padding: 0;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body class="bg-slate-900 text-slate-100">
   <div class="min-h-screen bg-[url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center relative">
 
 <!-- HERO SECTION -->
-<section class="relative h-screen w-full">
+<section id="home" class="relative h-screen w-full">
 
 <!-- BACKGROUND IMAGE -->
 <img src="components/Mainbg.png"
 class="absolute w-full h-full object-cover"/>
 
 <!-- DARK OVERLAY -->
-<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute inset-0 bg-black/25"></div>
 
 
 <!-- NAVBAR -->
-<div class="relative z-20 max-w-7xl mx-auto px-6 pt-6">
-
-<div class="flex items-center justify-between">
+<div id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 pt-6">
+    <div class="flex items-center justify-between">
 
 <!-- LOGO -->
-<div class="flex items-center gap-2 text-white font-bold text-xl">
-<div class="bg-white text-blue-600 px-2 py-1 rounded font-black">Z</div>
-EMAARA
+<div class="flex items-center gap-2">
+<img src="components/assets/emara logo white.png" alt="Emaara Logo" class="h-10 w-auto">
 </div>
 
 <!-- MENU -->
-<div class="hidden md:flex items-center bg-white/20 backdrop-blur-md rounded-full px-2 py-2 text-white gap-6">
+<div class="hidden md:flex items-center bg-white/20 rounded-full px-6 py-2 text-white gap-6">
 
-<a class="bg-white text-blue-600 px-4 py-1 rounded-full text-sm font-medium">Home</a>
+<a href="#home" class="nav-link active px-4 py-2 rounded-full text-sm font-medium transition-all">Home</a>
 
-<a class="text-sm">Destination ▾</a>
-<a class="text-sm">Packages ▾</a>
-<a class="text-sm">Contact</a>
+<a href="#find-perfect-trip" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Destination</a>
+<a href="#find-perfect-trip" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Packages</a>
+<a href="#get-in-touch" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Contact</a>
 
 </div>
 
 <!-- BUTTON -->
-<button class="bg-white rounded-full px-6 py-2 flex items-center gap-2 font-medium">
+<button class="bg-white rounded-full text-black px-6 py-2 flex items-center gap-2 font-medium">
 Plan Your Trip
 <span class="bg-blue-600 text-white rounded-full px-2">→</span>
 </button>
 
-</div>
+    </div>
+  </div>
 </div>
 
 
 <!-- HERO CONTENT -->
 <div class="relative z-20 flex flex-col items-center justify-center text-center h-full text-white px-6">
 
-<p class="tracking-widest text-sm mb-4 opacity-90">
+<p class="hero-subtitle tracking-widest text-sm mb-4 opacity-90">
 DISCOVER YOUR NEXT
 </p>
 
-<h1 class="md:text-[120px] text-[60px] font-extrabold leading-none">
+<h1 class="hero-title md:text-[120px] text-[60px] font-extrabold leading-none">
 ADVENTURE
 </h1>
 
-<p class="max-w-2xl text-sm mt-6 opacity-80">
+<p class="hero-description max-w-2xl text-sm mt-6 opacity-80">
 Experience the magic of exploring the world's most breathtaking destinations
 with our custom-designed travel packages for every adventurer.
 </p>
@@ -80,7 +570,7 @@ with our custom-designed travel packages for every adventurer.
 
 
 <!-- SEARCH BAR -->
-<div class="absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 w-full px-4 sm:px-6 md:px-12 z-30">
+<div class="hero-search absolute bottom-6 sm:bottom-8 md:bottom-12 left-0 right-0 w-full px-4 sm:px-6 md:px-12 z-30">
 
 <div class="bg-white rounded-2xl sm:rounded-full shadow-xl flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-0 sm:gap-3 md:px-4 sm:px-6 md:py-4 sm:py-5 border border-gray-200">
 
@@ -125,7 +615,7 @@ with our custom-designed travel packages for every adventurer.
 
     <!-- Button -->
     <div class="w-full sm:w-auto pt-3 sm:pt-0">
-      <button onclick="redirectToWhatsApp()" class="bg-[#0D3B4C] text-white px-4 sm:px-6 py-3 rounded-xl sm:rounded-full flex items-center hover:bg-[#0b3342] transition w-full sm:w-[180px] justify-center cursor-pointer">
+      <button onclick="redirectToWhatsApp()" class="bg-[#0D3B4C] text-white px-4 sm:px-6 py-3 rounded-xl sm:rounded-full flex items-center gap-2 hover:bg-[#0b3342] transition w-full sm:w-auto justify-center cursor-pointer whitespace-nowrap">
   <span class="md:text-[13px] sm:text-[16px]">Find Adventure</span>
   
   <span class="bg-[#1E566B] p-2 rounded-full flex items-center justify-center flex-shrink-0">
@@ -149,13 +639,13 @@ with our custom-designed travel packages for every adventurer.
 
 </section>
 
-<!-- Banner -->
-<div class="w-full bg-[#0D3B4C] py-6">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 text-white">
-
+<!-- Banner Carousel - 2 by 2 -->
+<div class="marquee-container">
+  <div class="marquee-content text-white">
+    
     <!-- Item 1 -->
-    <div class="flex items-center gap-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="marquee-item">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
           d="M9 20l-5.447-2.724A2 2 0 013 15.382V5a2 2 0 012-2h6m0 18l6-3m-6 3V3m6 15l5.447-2.724A2 2 0 0021 13.382V5a2 2 0 00-2-2h-6m0 0v18"/>
       </svg>
@@ -163,8 +653,8 @@ with our custom-designed travel packages for every adventurer.
     </div>
 
     <!-- Item 2 -->
-    <div class="flex items-center gap-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="marquee-item">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
           d="M12 8c-1.657 0-3 1.343-3 3v5h6v-5c0-1.657-1.343-3-3-3zm0 0V6m0 12v2m8-10h-2M6 10H4m12.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m0 12.728l1.414-1.414M18.364 5.636l-1.414 1.414"/>
       </svg>
@@ -172,8 +662,8 @@ with our custom-designed travel packages for every adventurer.
     </div>
 
     <!-- Item 3 -->
-    <div class="flex items-center gap-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="marquee-item">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
           d="M3 7h18M3 12h18M3 17h18"/>
       </svg>
@@ -219,7 +709,7 @@ function redirectToWhatsApp() {
   const encodedMessage = encodeURIComponent(message);
   
   // WhatsApp number (replace with your actual number)
-  const whatsappNumber = '911234554321'; // Format: country code + number (no + or spaces)
+  const whatsappNumber = '917510197110'; // Format: country code + number (no + or spaces)
   
   // Create WhatsApp URL
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -227,12 +717,65 @@ function redirectToWhatsApp() {
   // Open WhatsApp
   window.open(whatsappUrl, '_blank');
 }
+
+// Function to open WhatsApp for visa enquiries
+function openWhatsAppVisa(visaType) {
+  const whatsappNumber = '917510197110';
+  const message = `Hi! I'm interested in learning more about the ${visaType}. Can you provide more details?`;
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+}
+
+// Scroll animation for "Your Trusted Travel Partner" section
+function initScrollAnimations() {
+  const centerImage = document.querySelector('.center-image');
+  const leftCards = document.querySelectorAll('.left-card');
+  const rightCards = document.querySelectorAll('.right-card');
+
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Trigger center image first
+        if (entry.target === centerImage) {
+          centerImage.classList.add('scrolled');
+        }
+        
+        // Then left cards
+        leftCards.forEach((card) => {
+          if (entry.target.contains(card) || entry.target === card.parentElement) {
+            setTimeout(() => card.classList.add('scrolled'), 100);
+          }
+        });
+        
+        // Then right cards
+        rightCards.forEach((card) => {
+          if (entry.target.contains(card) || entry.target === card.parentElement) {
+            setTimeout(() => card.classList.add('scrolled'), 100);
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  if (centerImage) observer.observe(centerImage);
+  leftCards.forEach(card => observer.observe(card));
+  rightCards.forEach(card => observer.observe(card));
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initScrollAnimations);
 </script>
 
 
 
 <!-- SERVICES SECTION -->
-<section class="bg-gray-100 py-16 px-6 md:px-16">
+<section id="destination" class="bg-gray-100 py-16 px-6 md:px-16">
   <!-- Heading -->
   <div class="text-center mb-12 relative flex flex-col items-center justify-center">
 
@@ -260,8 +803,8 @@ function redirectToWhatsApp() {
     <div class="space-y-6">
       
       <!-- Card 1 -->
-      <div class="flex items-start gap-4 bg-white p-5 rounded-xl border shadow-sm">
-        <div class="bg-[#033D5B] text-white p-3 rounded-full">
+      <div class="service-card flex items-start gap-4 bg-white p-5 rounded-xl border shadow-sm">
+        <div class="service-icon bg-[#033D5B] text-white p-3 rounded-full">
           <!-- Icon -->
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="3" width="18" height="18" rx="3"></rect>
@@ -277,8 +820,8 @@ function redirectToWhatsApp() {
       </div>
 
       <!-- Card 2 -->
-      <div class="flex items-start gap-4 bg-white p-5 rounded-xl border shadow-sm">
-        <div class="bg-[#033D5B] text-white p-3 rounded-full">
+      <div class="service-card flex items-start gap-4 bg-white p-5 rounded-xl border shadow-sm">
+        <div class="service-icon bg-[#033D5B] text-white p-3 rounded-full">
           <!-- Icon -->
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M2 16l20-6-20-6v6l15 0"></path>
@@ -293,8 +836,8 @@ function redirectToWhatsApp() {
       </div>
 
       <!-- Card 3 -->
-      <div class="flex items-start gap-4 bg-white p-5 rounded-xl border shadow-sm">
-        <div class="bg-[#033D5B] text-white p-3 rounded-full">
+      <div class="service-card flex items-start gap-4 bg-white p-5 rounded-xl border shadow-sm">
+        <div class="service-icon bg-[#033D5B] text-white p-3 rounded-full">
           <!-- Icon -->
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="3" y="7" width="18" height="13" rx="2"></rect>
@@ -312,21 +855,21 @@ function redirectToWhatsApp() {
     </div>
 
     <!-- Right Side Graphic -->
-    <div class="relative flex justify-center items-center">
+    <div class="graphics-section relative flex justify-center items-center">
       
      <div class="relative w-full max-w-[520px] h-[500px]  bg-gray-100 mx-auto">
  <!-- Arrow -->
-  <svg class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-bounce" width="80" height="80" viewBox="0 0 100 100">
+  <svg class="arrow-svg absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" width="80" height="80" viewBox="0 0 100 100">
     <path d="M20,60 C20,20 80,20 80,50" stroke="#0f3d4a" stroke-width="3" fill="none" stroke-dasharray="6,6"/>
     <polygon points="75,45 85,50 75,55" fill="#0f3d4a"/>
   </svg>
   <!-- Back Card -->
-  <div class="absolute w-[260px] h-[384px] border-2 border-teal-800 rounded-2xl 
+  <div class="back-card absolute w-[260px] h-[384px] border-2 border-teal-800 rounded-2xl 
               rotate-[12deg] top-10 right-20 bg-gray-200">
   </div>
 
   <!-- Front Card -->
-  <div class="absolute w-[260px] h-[357px] border-4 border-teal-900 rounded-2xl 
+  <div class="front-card absolute w-[260px] h-[357px] border-4 border-teal-900 rounded-2xl 
               -rotate-[15deg] top-20 left-16 bg-gray-200 shadow-lg">
   </div>
 
@@ -337,32 +880,32 @@ function redirectToWhatsApp() {
 
   </div>
 </section>
-<section class="bg-[#f5f5f5] py-20 px-6 md:px-20">
+<section id="packages" class="bg-[#f5f5f5] py-20 px-6 md:px-20">
 
   <!-- Heading -->
-  <div class="text-center mb-14 relative flex flex-col items-center">
+  <div class="destination-section-heading text-center mb-14 relative flex flex-col items-center">
 
     <!-- Background Text -->
-    <span class="absolute sm:text-[80px] md:text-[110px] font-extrabold text-gray-200 tracking-widest -top-10">
+    <span class="destination-bg-text absolute sm:text-[80px] md:text-[110px] font-extrabold text-gray-200 tracking-widest -top-10">
       DESTINATION
     </span>
 
     <!-- Title -->
-    <h2 class="text-2xl font-semibold text-gray-900 relative z-10">
+    <h2 class="destination-title text-2xl font-semibold text-gray-900 relative z-10">
       Featured Destinations
     </h2>
 
     <!-- Description -->
-    <p class="text-gray-500 mt-3 max-w-2xl text-sm relative z-10 leading-relaxed">
+    <p class="destination-description text-gray-500 mt-3 max-w-2xl text-sm relative z-10 leading-relaxed">
       Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.
     </p>
 
   </div>
 
   <!-- Cards Grid -->
-  <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="destination-grid max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <div class="group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
+    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
       <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -374,7 +917,7 @@ function redirectToWhatsApp() {
       </div>
     </div>
 
-    <div class="group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
+    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -386,7 +929,7 @@ function redirectToWhatsApp() {
       </div>
     </div>
 
-    <div class="group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
+    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
       <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -398,7 +941,7 @@ function redirectToWhatsApp() {
       </div>
     </div>
 
-    <div class="group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
+    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
       <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -410,7 +953,7 @@ function redirectToWhatsApp() {
       </div>
     </div>
 
-    <div class="group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
+    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
       <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -422,7 +965,7 @@ function redirectToWhatsApp() {
       </div>
     </div>
 
-    <div class="group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
+    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
@@ -466,30 +1009,106 @@ function redirectToWhatsApp() {
     <div class="flex flex-col gap-6">
       
   <img src="components/flight.png"
-           class="rounded-[24px] h-[200px] object-cover w-full">
-<img src="components/flight.png"
-           class="rounded-[24px] h-[200px] object-cover w-full">
-      <img src="components/flight.png"
-           class="rounded-[24px] h-[200px] object-cover w-full">
+           class="left-card rounded-[24px] h-[200px] object-cover w-full">
+
+      <!-- Why Choose Us Points -->
+      <div class="left-card bg-[#033D5B] p-6 rounded-[20px] shadow-md h-[200px] flex flex-col justify-between">
+        <!-- Icon Layer -->
+        <div class="flex justify-start">
+          <div class="flex items-center justify-center h-12 w-12 rounded-full bg-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#033D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Heading Layer -->
+        <div>
+          <h3 class="text-lg font-semibold text-white">Expert Planning</h3>
+        </div>
+        
+        <!-- Description Layer -->
+        <div>
+          <p class="text-sm text-gray-200">Carefully curated itineraries designed by travel experts</p>
+        </div>
+      </div>
+
+      <div class="left-card bg-[#033D5B] p-6 rounded-[20px] shadow-md h-[200px] flex flex-col justify-between">
+        <!-- Icon Layer -->
+        <div class="flex justify-start">
+          <div class="flex items-center justify-center h-12 w-12 rounded-full bg-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#033D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.14 3.14a6 6 0 00-8.488 8.488l3.14 3.14A1 1 0 9.172 9.172l-3.14-3.14a4 4 0 015.656-5.656l3.14 3.14a1 1 0 101.414-1.414z" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Heading Layer -->
+        <div>
+          <h3 class="text-lg font-semibold text-white">24/7 Support</h3>
+        </div>
+        
+        <!-- Description Layer -->
+        <div>
+          <p class="text-sm text-gray-200">Round-the-clock assistance for all your travel needs</p>
+        </div>
+      </div>
 
     </div>
 
     <!-- CENTER IMAGE -->
     <div class="flex justify-center">
-      <img src="components/man.png"
-           class="rounded-[28px] h-[664px] w-full object-cover">
+      <img src="components/man.png" class="center-image rounded-[28px] h-[664px] w-full object-cover">
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="flex flex-col gap-6">
       
-      <img src="components/Rectangle 5683.png"
-           class="rounded-[28px] h-[200px] object-cover w-full">
+      <!-- Card 1 -->
+      <div class="right-card bg-[#033D5B] p-6 rounded-[20px] shadow-md h-[200px] flex flex-col justify-between">
+        <!-- Icon Layer -->
+        <div class="flex justify-start">
+          <div class="flex items-center justify-center h-12 w-12 rounded-full bg-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#033D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Heading Layer -->
+        <div>
+          <h3 class="text-lg font-semibold text-white">Best Deals</h3>
+        </div>
+        
+        <!-- Description Layer -->
+        <div>
+          <p class="text-sm text-gray-200">Unbeatable prices on flights, hotels & packages</p>
+        </div>
+      </div>
 
-       <img src="components/Rectangle 5683.png"
-           class="rounded-[28px] h-[200px] object-cover w-full">
- <img src="components/Rectangle 5683.png"
-           class="rounded-[28px] h-[200px] object-cover w-full">
+      <!-- Card 2 -->
+      <div class="right-card bg-[#033D5B] p-6 rounded-[20px] shadow-md h-[200px] flex flex-col justify-between">
+        <!-- Icon Layer -->
+        <div class="flex justify-start">
+          <div class="flex items-center justify-center h-12 w-12 rounded-full bg-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#033D5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20H7m6-4h.01M12 12h4.01M16 20h4" />
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Heading Layer -->
+        <div>
+          <h3 class="text-lg font-semibold text-white">World Coverage</h3>
+        </div>
+        
+        <!-- Description Layer -->
+        <div>
+          <p class="text-sm text-gray-200">Destinations across all continents available</p>
+        </div>
+      </div>
+
+      <img src="components/Rectangle 5683.png" class="right-card rounded-[28px] h-[200px] object-cover w-full">
 
 
     </div>
@@ -500,93 +1119,110 @@ function redirectToWhatsApp() {
 <section class="bg-[#f5f5f5] py-20 px-6 md:px-20">
 
   <!-- Heading -->
-  <div class="text-center mb-16 relative flex flex-col items-center">
+  <div class="visa-section-heading text-center mb-16 relative flex flex-col items-center">
 
     <!-- Background Text -->
-    <span class="absolute text-[60px]  md:text-[100px] font-extrabold text-gray-200 tracking-widest -top-12">
+    <span class="visa-bg-text absolute text-[60px]  md:text-[100px] font-extrabold text-gray-200 tracking-widest -top-12">
       VISA SERVICES
     </span>
 
     <!-- Title -->
-    <h2 class="text-[22px] font-semibold text-gray-900 relative z-10">
+    <h2 class="visa-title text-[22px] font-semibold text-gray-900 relative z-10">
       Find Your Visa Category
     </h2>
 
     <!-- Description -->
-    <p class="text-gray-500 mt-3 max-w-[600px] text-[13px] relative z-10">
+    <p class="visa-description text-gray-500 mt-3 max-w-[600px] text-[13px] relative z-10">
       Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.
     </p>
 
   </div>
 
   <!-- Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-    <!-- CARD -->
-    <div class="flex items-center justify-between bg-white border border-gray-200 rounded-[18px] px-6 py-5 h-[170px]">
-
+    <!-- CARD 1 -->
+    <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
-      <div class="w-[110px] h-[110px] bg-gray-300 rounded-[16px] flex-shrink-0"></div>
-
+      <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=60" alt="Business Visa" class="w-full h-full object-cover">
+      </div>
       <!-- Content -->
-      <div class="flex-1 px-5">
-        <h3 class="text-[15px] font-semibold text-[#1f3c4d]">
-          Business Visa
-        </h3>
-
-        <p class="text-[12px] text-gray-500 mt-2 leading-relaxed max-w-[230px]">
-          Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu
-        </p>
-
-        <!-- Arrow -->
-        <div class="mt-4 w-9 h-9 border border-blue-500 text-blue-500 rounded-md flex items-center justify-center">
-          ↗
+      <div class="p-6 flex flex-col justify-between flex-1">
+        <div>
+          <h3 class="text-xl font-semibold text-white">Business Visa</h3>
+          <p class="text-sm text-gray-300 mt-3 leading-relaxed">
+            Work opportunities in your desired country with full benefits
+          </p>
         </div>
+        <button onclick="openWhatsAppVisa('Business Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
+          <span class="text-white text-sm font-medium">Learn More</span>
+          <div class="w-8 h-8 border-2 border-white text-white rounded-lg flex items-center justify-center hover:bg-white hover:text-[#033D5B] transition">↗</div>
+        </button>
       </div>
-
-      <!-- Icon -->
-      <div class="w-10 h-10 flex items-center justify-center flex-shrink-0">
-        🌐
-      </div>
-
     </div>
 
-    <!-- COPY SAME CARD BELOW (only change title/icon) -->
-
-    <div class="flex items-center justify-between bg-white border border-gray-200 rounded-[18px] px-6 py-5 h-[170px]">
-      <div class="w-[110px] h-[110px] bg-gray-300 rounded-[16px] flex-shrink-0"></div>
-      <div class="flex-1 px-5">
-        <h3 class="text-[15px] font-semibold text-[#1f3c4d]">Working Visa</h3>
-        <p class="text-[12px] text-gray-500 mt-2 leading-relaxed max-w-[230px]">
-          Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu
-        </p>
-        <div class="mt-4 w-9 h-9 border border-blue-500 text-blue-500 rounded-md flex items-center justify-center">↗</div>
+    <!-- CARD 2 -->
+    <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
+      <!-- Image -->
+      <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=60" alt="Working Visa" class="w-full h-full object-cover">
       </div>
-      <div class="w-10 h-10 flex items-center justify-center flex-shrink-0">⚙️</div>
+      <!-- Content -->
+      <div class="p-6 flex flex-col justify-between flex-1">
+        <div>
+          <h3 class="text-xl font-semibold text-white">Working Visa</h3>
+          <p class="text-sm text-gray-300 mt-3 leading-relaxed">
+            Employment visa for professionals seeking career growth abroad
+          </p>
+        </div>
+        <button onclick="openWhatsAppVisa('Working Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
+          <span class="text-white text-sm font-medium">Learn More</span>
+          <div class="w-8 h-8 border-2 border-white text-white rounded-lg flex items-center justify-center hover:bg-white hover:text-[#033D5B] transition">↗</div>
+        </button>
+      </div>
     </div>
 
-    <div class="flex items-center justify-between bg-white border border-gray-200 rounded-[18px] px-6 py-5 h-[170px]">
-      <div class="w-[110px] h-[110px] bg-gray-300 rounded-[16px] flex-shrink-0"></div>
-      <div class="flex-1 px-5">
-        <h3 class="text-[15px] font-semibold text-[#1f3c4d]">Student Visa</h3>
-        <p class="text-[12px] text-gray-500 mt-2 leading-relaxed max-w-[230px]">
-          Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu
-        </p>
-        <div class="mt-4 w-9 h-9 border border-blue-500 text-blue-500 rounded-md flex items-center justify-center">↗</div>
+    <!-- CARD 3 -->
+    <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
+      <!-- Image -->
+      <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1427504494785-cdea0d3a3284?auto=format&fit=crop&w=500&q=60" alt="Student Visa" class="w-full h-full object-cover">
       </div>
-      <div class="w-10 h-10 flex items-center justify-center flex-shrink-0">📍</div>
+      <!-- Content -->
+      <div class="p-6 flex flex-col justify-between flex-1">
+        <div>
+          <h3 class="text-xl font-semibold text-white">Student Visa</h3>
+          <p class="text-sm text-gray-300 mt-3 leading-relaxed">
+            Education visa for international students pursuing higher studies
+          </p>
+        </div>
+        <button onclick="openWhatsAppVisa('Student Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
+          <span class="text-white text-sm font-medium">Learn More</span>
+          <div class="w-8 h-8 border-2 border-white text-white rounded-lg flex items-center justify-center hover:bg-white hover:text-[#033D5B] transition">↗</div>
+        </button>
+      </div>
     </div>
 
-    <div class="flex items-center justify-between bg-white border border-gray-200 rounded-[18px] px-6 py-5 h-[170px]">
-      <div class="w-[110px] h-[110px] bg-gray-300 rounded-[16px] flex-shrink-0"></div>
-      <div class="flex-1 px-5">
-        <h3 class="text-[15px] font-semibold text-[#1f3c4d]">Tourist Visa</h3>
-        <p class="text-[12px] text-gray-500 mt-2 leading-relaxed max-w-[230px]">
-          Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu
-        </p>
-        <div class="mt-4 w-9 h-9 border border-blue-500 text-blue-500 rounded-md flex items-center justify-center">↗</div>
+    <!-- CARD 4 -->
+    <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px] relative">
+      <!-- Image -->
+      <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=500&q=60" alt="Tourist Visa" class="w-full h-full object-cover">
       </div>
-      <div class="w-10 h-10 flex items-center justify-center flex-shrink-0">🌍</div>
+      <!-- Content -->
+      <div class="p-6 flex flex-col justify-between flex-1">
+        <div>
+          <h3 class="text-xl font-semibold text-white">Tourist Visa</h3>
+          <p class="text-sm text-gray-300 mt-3 leading-relaxed">
+            Explore and experience destinations around the world as a tourist
+          </p>
+        </div>
+        <button onclick="openWhatsAppVisa('Tourist Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
+          <span class="text-white text-sm font-medium">Learn More</span>
+          <div class="w-8 h-8 border-2 border-white text-white rounded-lg flex items-center justify-center hover:bg-white hover:text-[#033D5B] transition">↗</div>
+        </button>
+      </div>
     </div>
 
   </div>
@@ -594,14 +1230,14 @@ function redirectToWhatsApp() {
 </section>
 
 <!-- FEATURED DESTINATIONS SECTION -->
-<section class="bg-white py-20 px-6 md:px-16">
-  <div class="max-w-5xl mx-auto text-center mb-10">
+<section id="find-perfect-trip" class="bg-white py-20 px-6 md:px-16">
+  <div class="perfect-trip-heading max-w-5xl mx-auto text-center mb-10">
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Find Your Perfect Trip</h2>
     <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.</p>
   </div>
 
   <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -610,7 +1246,7 @@ function redirectToWhatsApp() {
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -619,7 +1255,7 @@ function redirectToWhatsApp() {
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -628,7 +1264,7 @@ function redirectToWhatsApp() {
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -637,7 +1273,7 @@ function redirectToWhatsApp() {
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -646,7 +1282,7 @@ function redirectToWhatsApp() {
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -662,7 +1298,7 @@ function redirectToWhatsApp() {
 </section>
 
 <section class="bg-[#f5f5f5] py-20 px-6 md:px-16">
-  <div class="max-w-5xl mx-auto text-center mb-10 relative">
+  <div class="founder-heading max-w-5xl mx-auto text-center mb-10 relative">
     <span class="absolute text-6xl md:text-7xl font-extrabold text-gray-200 opacity-40 inset-x-0 top-0">FOUNDER</span>
     <div class="relative z-10">
       <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Meet the Founder</h2>
@@ -670,32 +1306,26 @@ function redirectToWhatsApp() {
     </div>
   </div>
 
-  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
-    <div class="rounded-3xl bg-gray-200 h-[350px]"></div>
-    <div class="rounded-3xl bg-gradient-to-br from-[#0a3d67] to-[#04486f] text-white p-8 flex flex-col justify-between">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="founder-image rounded-3xl bg-gray-200 h-[500px] overflow-hidden">
+      <img src="components/assets/afnas.png" alt="Founder" class="w-full h-full object-cover object-center" style="object-position: center 30%;">
+    </div>
+    <div class="founder-quote rounded-3xl bg-gradient-to-br from-[#0a3d67] to-[#04486f] text-white p-10 flex flex-col justify-between h-[500px]">
       <div>
-        <div class="text-5xl leading-none">“</div>
-        <p class="mt-3 text-base md:text-lg leading-relaxed text-white/90">We have been operating for over and providing top-notch services to our clients and building a strong track record in the industry. We have been operating for over a decade providing top-notch travel solutions with trust and care.</p>
+        <div class="text-5xl leading-none">"</div>
+        <p class="mt-4 text-base md:text-lg leading-relaxed text-white/90">I started Emaara Travel because I believe travel transforms lives and opens minds. My passion is to make world exploration accessible to everyone by providing hassle-free visa services and curated travel experiences. Every journey should be an adventure, not a burden—that's our promise.
+        
+With over a decade of experience in the travel and immigration industry, I've witnessed firsthand how the right guidance can turn travel dreams into reality. At Emaara, we don't just process visas; we create pathways to unforgettable experiences. Our dedicated team works tirelessly to ensure every client gets personalized attention and expert support throughout their journey.</p>
       </div>
-      <div class="mt-6 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full bg-gray-200"></div>
-          <div>
-            <p class="font-bold">Afnas K</p>
-            <p class="text-xs uppercase tracking-[0.2em] text-white/80">Founder</p>
-          </div>
-        </div>
-        <div class="flex gap-2">
-          <button class="w-9 h-9 rounded-full border border-white/50 text-white">←</button>
-          <button class="w-9 h-9 rounded-full border border-white/50 text-white">→</button>
-        </div>
+      <div class="flex items-center gap-3">
+        <p class="font-bold text-lg">— Afnas Emaara, Founder & CEO</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="bg-white py-20 px-6 md:px-16">
-  <div class="max-w-5xl mx-auto text-center mb-10 relative">
+<section id="get-in-touch" class="bg-white py-20 px-6 md:px-16">
+  <div class="contact-heading max-w-5xl mx-auto text-center mb-10 relative">
     <span class="absolute text-6xl md:text-7xl font-extrabold text-gray-200 opacity-40 inset-x-0 top-0">CONTACT US</span>
     <div class="relative z-10">
       <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Get In Touch With US</h2>
@@ -704,7 +1334,7 @@ function redirectToWhatsApp() {
   </div>
 
   <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-    <div class="bg-white    p-6 shadow-sm">
+    <div class="contact-form bg-white p-6 shadow-sm">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div>
           <label class="text-[#046EA5] text-sm font-semibold">Your Email</label>
@@ -726,14 +1356,14 @@ function redirectToWhatsApp() {
       <button class="w-full bg-[#033D5B] text-white py-3 rounded-full font-semibold hover:bg-[#022d47] transition">Send Message</button>
     </div>
 
-    <div class=" rounded-3xl  p-8 flex flex-col justify-between">
+    <div class="contact-info rounded-3xl p-8 flex flex-col justify-between">
       <div>
         <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#046EA5]">Message Us</span>
         <h3 class="mt-3 text-3xl md:text-4xl font-bold text-[#0b4f8a]">Voyages of Wonder of Exploring Unknown</h3>
         <p class="mt-4 text-sm text-slate-600">Lorem ipsum is simply dummy text the printing and typesetting industry’s standard dummy text ever.</p>
       </div>
       <div class="mt-6 space-y-3 text-sm text-slate-700">
-        <div class="flex items-center gap-3"><span>📞</span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]">+91 12345 54321</p></div></div>
+        <div class="flex items-center gap-3"><span>📞</span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
         <div class="flex items-center gap-3"><span>🕒</span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
         <div class="flex items-center gap-3"><span>📍</span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
       </div>
@@ -741,7 +1371,7 @@ function redirectToWhatsApp() {
   </div>
 </section>
 
-<section class="bg-[#033D5B] text-white">
+<section id="contact" class="bg-[#033D5B] text-white">
 
   <!-- TOP BAR -->
   <div class="border-b border-white/20 px-6 md:px-20 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
@@ -772,17 +1402,14 @@ function redirectToWhatsApp() {
   </div>
 
   <!-- FOOTER MAIN -->
-  <div class="px-6 md:px-20 py-14 grid grid-cols-1 md:grid-cols-4 gap-10 relative">
+  <div class="footer-content px-6 md:px-20 py-14 grid grid-cols-1 md:grid-cols-4 gap-10 relative">
 
     <!-- Background Map -->
     <div class="absolute inset-0 opacity-10 bg-[url('/components/Map.png')] bg-cover bg-center"></div>
 
     <!-- Column 1 -->
-    <div class="relative z-10">
-      <h2 class="text-xl font-bold tracking-wider">EMAARA</h2>
-      <p class="text-xs opacity-70 mt-1">TOUR & TRAVELS</p>
-
-      <div class="mt-6 text-3xl">📍</div>
+    <div class="relative z-10 flex flex-col items-start gap-3">
+      <img src="components/assets/emara logo white.png" alt="Emaara Logo" class="h-12 w-auto">
     </div>
 
     <!-- Column 2 -->
@@ -811,28 +1438,96 @@ function redirectToWhatsApp() {
     <div class="relative z-10">
       <h3 class="text-sm font-semibold mb-4">REACH US</h3>
       <ul class="space-y-2 text-sm opacity-80">
-        <li>+91 12345 54321</li>
+        <li><a href="tel:+917510197110" class="hover:text-white transition">+91 7510197110</a></li>
+        <li><a href="https://wa.me/917510197110" target="_blank" class="hover:text-white transition">WhatsApp</a></li>
         <li>emaaratravels@gmail.com</li>
       </ul>
     </div>
 
   </div>
 
+
   <!-- BOTTOM BAR -->
-  <div class="border-t border-white/20 px-6 md:px-20 py-4 flex flex-col md:flex-row justify-between items-center text-sm opacity-80">
+  <div class="border-t border-white/20 px-6 md:px-20 py-6 flex flex-col md:flex-row justify-between items-center text-sm opacity-80 gap-4">
 
     <p>© emaaratravels 2026 | All Rights Reserved</p>
 
-    <div class="flex gap-4 mt-3 md:mt-0">
-      <span>f</span>
-      <span>◎</span>
-      <span>𝕏</span>
-      <span>in</span>
+    <div class="flex gap-4">
+      <span class="cursor-pointer hover:opacity-100 transition">f</span>
+      <span class="cursor-pointer hover:opacity-100 transition">◎</span>
+      <span class="cursor-pointer hover:opacity-100 transition">𝕏</span>
+      <span class="cursor-pointer hover:opacity-100 transition">in</span>
     </div>
 
   </div>
 
 </section>
   </div>
+
+  <script>
+    // Navbar Active State Management
+    function setActiveNavLink() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = ['home', 'destination', 'packages', 'contact'];
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Remove active state from all links
+          navLinks.forEach(l => {
+            l.classList.remove('bg-white', 'text-blue-600');
+            l.classList.add('hover:bg-white/20');
+          });
+          
+          // Add active state to clicked link
+          this.classList.add('bg-white', 'text-blue-600');
+          this.classList.remove('hover:bg-white/20');
+          
+          // Optional: Scroll to section (if sections exist)
+          const target = this.getAttribute('href').substring(1);
+          const section = document.getElementById(target);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', setActiveNavLink);
+    
+    // Also update active state on scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section');
+      
+      // Hide navbar when scrolled down
+      if (window.scrollY > 100) {
+        navbar.style.display = 'none';
+      } else {
+        navbar.style.display = 'block';
+      }
+      
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('bg-white', 'text-blue-600');
+        link.classList.add('hover:bg-white/20');
+        
+        if (link.getAttribute('href').substring(1) === currentSection) {
+          link.classList.add('bg-white', 'text-blue-600');
+          link.classList.remove('hover:bg-white/20');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
