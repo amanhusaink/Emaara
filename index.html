@@ -502,6 +502,62 @@
       padding: 0;
       white-space: nowrap;
     }
+    
+    /* WhatsApp Floating Button */
+    .whatsapp-floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #25D366;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .whatsapp-floating-btn:hover {
+      background-color: #20BA5A;
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    }
+    
+    .whatsapp-floating-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+    
+    .whatsapp-floating-btn img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+    
+    @media (max-width: 768px) {
+      .whatsapp-floating-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+      }
+      
+      .whatsapp-floating-btn svg {
+        width: 26px;
+        height: 26px;
+      }
+      
+      .whatsapp-floating-btn img {
+        width: 20px;
+        height: 20px;
+      }
+    }
   </style>
 </head>
 <body class="bg-slate-900 text-slate-100">
@@ -553,18 +609,13 @@ Plan Your Trip
 <!-- HERO CONTENT -->
 <div class="relative z-20 flex flex-col items-center justify-center text-center h-full text-white px-6">
 
-<p class="hero-subtitle tracking-widest text-sm mb-4 opacity-90">
-DISCOVER YOUR NEXT
-</p>
+
 
 <h1 class="hero-title md:text-[120px] text-[60px] font-extrabold leading-none">
-ADVENTURE
+EMAARA
 </h1>
+<h2 class="mt-8 text-lg">your trusted travel partner</h2>
 
-<p class="hero-description max-w-2xl text-sm mt-6 opacity-80">
-Experience the magic of exploring the world's most breathtaking destinations
-with our custom-designed travel packages for every adventurer.
-</p>
 
 </div>
 
@@ -709,7 +760,7 @@ function redirectToWhatsApp() {
   const encodedMessage = encodeURIComponent(message);
   
   // WhatsApp number (replace with your actual number)
-  const whatsappNumber = '917510197110'; // Format: country code + number (no + or spaces)
+  const whatsappNumber = '917025550750'; // Format: country code + number (no + or spaces)
   
   // Create WhatsApp URL
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -720,11 +771,40 @@ function redirectToWhatsApp() {
 
 // Function to open WhatsApp for visa enquiries
 function openWhatsAppVisa(visaType) {
-  const whatsappNumber = '917510197110';
+  const whatsappNumber = '917025550750';
   const message = `Hi! I'm interested in learning more about the ${visaType}. Can you provide more details?`;
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, '_blank');
+}
+
+// Function to send contact form message
+function sendContactMessage() {
+  const email = document.getElementById('contact-email').value.trim();
+  const phone = document.getElementById('contact-phone').value.trim();
+  const address = document.getElementById('contact-address').value.trim();
+  const message = document.getElementById('contact-message').value.trim();
+  
+  // Validation
+  if (!email || !phone || !address || !message) {
+    alert('Please fill in all fields');
+    return;
+  }
+  
+  // Create message for WhatsApp
+  const whatsappNumber = '917025550750';
+  const whatsappMessage = `*📋 Contact Form Submission*\n\n*Email:* ${email}\n*Phone:* ${phone}\n*Address:* ${address}\n\n*Message:*\n${message}`;
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  
+  // Open WhatsApp with the message
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+  
+  // Clear the form
+  document.getElementById('contact-email').value = '';
+  document.getElementById('contact-phone').value = '';
+  document.getElementById('contact-address').value = '';
+  document.getElementById('contact-message').value = '';
 }
 
 // Scroll animation for "Your Trusted Travel Partner" section
@@ -812,10 +892,10 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
           </svg>
         </div>
         <div>
-          <h4 class="font-semibold text-gray-800">Global Visa Services</h4>
+          <h4 class="font-semibold text-gray-800">TICKETING</h4>
           <p class="text-sm text-gray-500 mt-1">
-            There are many variati of passages of engineer’s available, have suffered alteration in engineer’s available
-          </p>
+Work Opportunities Abroad with Complete Support
+Start your international career with trusted guidance, visa assistance, and full relocation support          </p>
         </div>
       </div>
 
@@ -828,10 +908,9 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
           </svg>
         </div>
         <div>
-          <h4 class="font-semibold text-gray-800">Flight Ticket Booking</h4>
+          <h4 class="font-semibold text-gray-800">Visa</h4>
           <p class="text-sm text-gray-500 mt-1">
-            There are many variati of passages of engineer’s available, have suffered alteration in engineer’s available
-          </p>
+We provide complete visa support, documentation guidance, and application processing for your desired country.          </p>
         </div>
       </div>
 
@@ -845,9 +924,26 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
           </svg>
         </div>
         <div>
-          <h4 class="font-semibold text-gray-800">Travel Insurance</h4>
+          <h4 class="font-semibold text-gray-800">TOUR PACKAGES</h4>
           <p class="text-sm text-gray-500 mt-1">
-            There are many variati of passages of engineer’s available, have suffered alteration in engineer’s available
+            Curated travel packages with unforgettable experiences and amazing destinations
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 - Passport Services -->
+      <div class="service-card flex items-start gap-4 bg-white p-5 rounded-xl border shadow-sm">
+        <div class="service-icon bg-[#033D5B] text-white p-3 rounded-full">
+          <!-- Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16v12H4z"></path>
+            <path d="M9 9h6M9 13h3"></path>
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-800">PASSPORT SERVICES</h4>
+          <p class="text-sm text-gray-500 mt-1">
+            Professional passport assistance and expedited processing for hassle-free travel
           </p>
         </div>
       </div>
@@ -1123,7 +1219,7 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
 
     <!-- Background Text -->
     <span class="visa-bg-text absolute text-[60px]  md:text-[100px] font-extrabold text-gray-200 tracking-widest -top-12">
-      VISA SERVICES
+    SERVICES
     </span>
 
     <!-- Title -->
@@ -1145,14 +1241,14 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=60" alt="Business Visa" class="w-full h-full object-cover">
+        <img src="components/Ticket.jpg" alt="Business Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
         <div>
           <h3 class="text-xl font-semibold text-white">Business Visa</h3>
           <p class="text-sm text-gray-300 mt-3 leading-relaxed">
-            Work opportunities in your desired country with full benefits
+            Work opportunities in your desired country with full benefits and support
           </p>
         </div>
         <button onclick="openWhatsAppVisa('Business Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
@@ -1166,14 +1262,14 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=60" alt="Working Visa" class="w-full h-full object-cover">
+        <img src="components/visa.jpg" alt="Working Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
         <div>
           <h3 class="text-xl font-semibold text-white">Working Visa</h3>
           <p class="text-sm text-gray-300 mt-3 leading-relaxed">
-            Employment visa for professionals seeking career growth abroad
+            Employment visa for professionals seeking career growth and opportunities abroad
           </p>
         </div>
         <button onclick="openWhatsAppVisa('Working Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
@@ -1187,14 +1283,14 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="https://images.unsplash.com/photo-1427504494785-cdea0d3a3284?auto=format&fit=crop&w=500&q=60" alt="Student Visa" class="w-full h-full object-cover">
+        <img src="components/attila-lisinszky-GnqsJz0x-dI-unsplash.jpg " alt="Student Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
         <div>
           <h3 class="text-xl font-semibold text-white">Student Visa</h3>
           <p class="text-sm text-gray-300 mt-3 leading-relaxed">
-            Education visa for international students pursuing higher studies
+            Education visa for international students pursuing higher studies and academic excellence
           </p>
         </div>
         <button onclick="openWhatsAppVisa('Student Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
@@ -1208,14 +1304,14 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px] relative">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=500&q=60" alt="Tourist Visa" class="w-full h-full object-cover">
+        <img src="components/passport.jpg" alt="Tourist Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
         <div>
           <h3 class="text-xl font-semibold text-white">Tourist Visa</h3>
           <p class="text-sm text-gray-300 mt-3 leading-relaxed">
-            Explore and experience destinations around the world as a tourist
+            Explore and experience destinations around the world as a tourist with ease
           </p>
         </div>
         <button onclick="openWhatsAppVisa('Tourist Visa')" class="flex items-center gap-2 w-fit hover:opacity-80 transition">
@@ -1230,14 +1326,14 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
 </section>
 
 <!-- FEATURED DESTINATIONS SECTION -->
-<section id="find-perfect-trip" class="bg-white py-20 px-6 md:px-16">
+<section id="find-perfect-trip" class="bg-white py-20 px-3 md:px-16">
   <div class="perfect-trip-heading max-w-5xl mx-auto text-center mb-10">
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Find Your Perfect Trip</h2>
     <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.</p>
   </div>
 
-  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 px-3 sm:px-0">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -1246,7 +1342,7 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -1255,7 +1351,7 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -1264,7 +1360,7 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -1273,7 +1369,7 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -1282,7 +1378,7 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
         <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
       </div>
     </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[300px] shadow-lg group">
+    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
@@ -1313,9 +1409,11 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
     <div class="founder-quote rounded-3xl bg-gradient-to-br from-[#0a3d67] to-[#04486f] text-white p-10 flex flex-col justify-between h-[500px]">
       <div>
         <div class="text-5xl leading-none">"</div>
-        <p class="mt-4 text-base md:text-lg leading-relaxed text-white/90">I started Emaara Travel because I believe travel transforms lives and opens minds. My passion is to make world exploration accessible to everyone by providing hassle-free visa services and curated travel experiences. Every journey should be an adventure, not a burden—that's our promise.
-        
-With over a decade of experience in the travel and immigration industry, I've witnessed firsthand how the right guidance can turn travel dreams into reality. At Emaara, we don't just process visas; we create pathways to unforgettable experiences. Our dedicated team works tirelessly to ensure every client gets personalized attention and expert support throughout their journey.</p>
+        <p class="mt-4 text-base md:text-lg leading-relaxed text-white/90">I founded Emaara Travel with a vision to make travel transformative, elegant, and effortless where every journey feels seamless and memorable.
+
+With a Bachelor’s degree in Travel and Tourism and over a decade of experience in the travel and immigration industry, I combine academic knowledge with real-world expertise to turn travel dreams into exceptional experiences.
+
+At Emaara, we go beyond visa processing, we curate journeys with precision and care, delivering personalized service and stress-free, unforgettable travel experiences.</p>
       </div>
       <div class="flex items-center gap-3">
         <p class="font-bold text-lg">— Afnas Emaara, Founder & CEO</p>
@@ -1338,22 +1436,22 @@ With over a decade of experience in the travel and immigration industry, I've wi
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
         <div>
           <label class="text-[#046EA5] text-sm font-semibold">Your Email</label>
-          <input class="mt-1 w-full border border-gray-200 rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Email"/>
+          <input id="contact-email" class="mt-1 w-full text-[#046EA5] border border-gray-200 rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Email"/>
         </div>
         <div>
           <label class="text-[#046EA5] text-sm font-semibold">Your Phone</label>
-          <input class="mt-1 w-full border border-gray-200 rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Phone"/>
+          <input id="contact-phone" class="mt-1 w-full text-[#046EA5] border border-gray-200 rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Phone"/>
         </div>
       </div>
       <div class="mb-4">
         <label class="text-[#046EA5] text-sm font-semibold">Your Address</label>
-        <input class="mt-1 w-full border border-gray-200 rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Address"/>
+        <input id="contact-address" class="mt-1 w-full text-[#046EA5] border border-gray-200 rounded-full px-4 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Address"/>
       </div>
       <div class="mb-4">
         <label class="text-[#046EA5] text-sm font-semibold">Message</label>
-        <textarea class="mt-1 w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-400" rows="4" placeholder="Write Message..."></textarea>
+        <textarea id="contact-message" class="mt-1 w-full text-[#046EA5] border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-400" rows="4" placeholder="Write Message..."></textarea>
       </div>
-      <button class="w-full bg-[#033D5B] text-white py-3 rounded-full font-semibold hover:bg-[#022d47] transition">Send Message</button>
+      <button onclick="sendContactMessage()" class="w-full bg-[#033D5B] text-white py-3 rounded-full font-semibold hover:bg-[#022d47] transition">Send Message</button>
     </div>
 
     <div class="contact-info rounded-3xl p-8 flex flex-col justify-between">
@@ -1363,9 +1461,9 @@ With over a decade of experience in the travel and immigration industry, I've wi
         <p class="mt-4 text-sm text-slate-600">Lorem ipsum is simply dummy text the printing and typesetting industry’s standard dummy text ever.</p>
       </div>
       <div class="mt-6 space-y-3 text-sm text-slate-700">
-        <div class="flex items-center gap-3"><span>📞</span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
-        <div class="flex items-center gap-3"><span>🕒</span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
-        <div class="flex items-center gap-3"><span>📍</span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
+        <div class="flex items-center gap-3"><span><img class="h-[16px]" src="components/phone.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
+        <div class="flex items-center gap-3"><span><img class="h-[16px]" src="components/clock.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
+        <div class="flex items-center gap-3"><span><img class="h-[16px]" src="components/location.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
       </div>
     </div>
   </div>
@@ -1379,7 +1477,7 @@ With over a decade of experience in the travel and immigration industry, I've wi
     <!-- Left -->
     <div class="flex items-center gap-4">
       <div class="w-12 h-12 bg-[#1b6b85] rounded-full flex items-center justify-center text-xl">
-        💼
+        <img src="components/010-currency.png" alt="">
       </div>
       <p class="text-[16px] font-medium">
         Need Any Support For <br> Tour And Visa?
@@ -1392,7 +1490,7 @@ With over a decade of experience in the travel and immigration industry, I've wi
     <!-- Right -->
     <div class="flex items-center gap-4">
       <div class="w-12 h-12 bg-[#1b6b85] rounded-full flex items-center justify-center text-xl">
-        🌍
+        <img src="components/earth.png" alt="">
       </div>
       <p class="text-[16px] font-medium">
         Are You Ready For Get <br> Started Travelling?
@@ -1416,10 +1514,10 @@ With over a decade of experience in the travel and immigration industry, I've wi
     <div class="relative z-10">
       <h3 class="text-sm font-semibold mb-4">QUICK LINKS</h3>
       <ul class="space-y-2 text-sm opacity-80">
-        <li>Home</li>
-        <li>Destinations</li>
-        <li>Packages</li>
-        <li>Services</li>
+        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+        <li><a href="#destination" class="hover:text-white transition">Destinations</a></li>
+        <li><a href="#packages" class="hover:text-white transition">Packages</a></li>
+        <li><a href="#SERVICES" class="hover:text-white transition">Services</a></li>
       </ul>
     </div>
 
@@ -1439,8 +1537,9 @@ With over a decade of experience in the travel and immigration industry, I've wi
       <h3 class="text-sm font-semibold mb-4">REACH US</h3>
       <ul class="space-y-2 text-sm opacity-80">
         <li><a href="tel:+917510197110" class="hover:text-white transition">+91 7510197110</a></li>
+        <li><a href="tel:+917025550750" class="hover:text-white transition">+91 7025550750</a></li>
         <li><a href="https://wa.me/917510197110" target="_blank" class="hover:text-white transition">WhatsApp</a></li>
-        <li>emaaratravels@gmail.com</li>
+        <li>emaaratours@gmail.com</li>
       </ul>
     </div>
 
@@ -1529,5 +1628,10 @@ With over a decade of experience in the travel and immigration industry, I've wi
       });
     });
   </script>
+  
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/917025550750?text=Hello%20Emaara%20Travels" target="_blank" class="whatsapp-floating-btn" title="Chat with us on WhatsApp">
+    <img src="components/whatsapp.svg" alt="WhatsApp">
+  </a>
 </body>
 </html>
