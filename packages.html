@@ -61,6 +61,21 @@
     .package-card:nth-child(10) { animation-delay: 1s; }
     .package-card:nth-child(11) { animation-delay: 1.1s; }
     .package-card:nth-child(12) { animation-delay: 1.2s; }
+    .package-card:nth-child(13) { animation-delay: 1.3s; }
+    .package-card:nth-child(14) { animation-delay: 1.4s; }
+    .package-card:nth-child(15) { animation-delay: 1.5s; }
+    .package-card:nth-child(16) { animation-delay: 1.6s; }
+    .package-card:nth-child(17) { animation-delay: 1.7s; }
+    .package-card:nth-child(18) { animation-delay: 1.8s; }
+    .package-card:nth-child(19) { animation-delay: 1.9s; }
+    .package-card:nth-child(20) { animation-delay: 2s; }
+    .package-card:nth-child(21) { animation-delay: 2.1s; }
+    .package-card:nth-child(22) { animation-delay: 2.2s; }
+    .package-card:nth-child(23) { animation-delay: 2.3s; }
+    .package-card:nth-child(24) { animation-delay: 2.4s; }
+    .package-card:nth-child(25) { animation-delay: 2.5s; }
+    .package-card:nth-child(26) { animation-delay: 2.6s; }
+    .package-card:nth-child(27) { animation-delay: 2.7s; }
 
     .package-card:hover {
       transform: translateY(-8px);
@@ -113,158 +128,272 @@
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       
       <!-- Package 1 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('7-Day Taj Mahal & Agra Tour')">
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Taj Mahal & Agra')">
         <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Taj Mahal & Agra</h3>
           <p class="text-sm text-slate-600 mt-2">Experience the monument of eternal love</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹25,999</span>
-            <span class="text-xs text-slate-500">7 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 2 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('5-Day Kerala Backwaters Cruise')">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Kerala Backwaters')">
+        <img src="components/Backwater.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Kerala Backwaters</h3>
           <p class="text-sm text-slate-600 mt-2">Serene lagoons and tropical paradise</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹32,499</span>
-            <span class="text-xs text-slate-500">5 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 3 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('6-Day Jaipur Royal Heritage Tour')">
-        <img src="https://images.unsplash.com/photo-1599661046289-e31897846313?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Jaipur Heritage')">
+        <img src="components/meric-dagli-uADXI1v10us-unsplash.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Jaipur Heritage</h3>
           <p class="text-sm text-slate-600 mt-2">Royal palaces and pink city culture</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹28,999</span>
-            <span class="text-xs text-slate-500">6 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 4 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('4-Day Goa Beach Getaway')">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Goa Beach Paradise')">
+        <img src="components/neeraj-negi-uGNEAjz0910-unsplash.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Goa Beach Paradise</h3>
           <p class="text-sm text-slate-600 mt-2">Golden sands and tropical vibes</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹18,999</span>
-            <span class="text-xs text-slate-500">4 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 5 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('5-Day Manali Adventure Package')">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Manali Adventure')">
+        <img src="components/Manali.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Manali Adventure</h3>
           <p class="text-sm text-slate-600 mt-2">Mountains and thrilling experiences</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹22,499</span>
-            <span class="text-xs text-slate-500">5 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 6 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('8-Day Varanasi Spiritual Journey')">
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Varanasi Spiritual')">
         <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Varanasi Spiritual</h3>
           <p class="text-sm text-slate-600 mt-2">Sacred spiritual journey and culture</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹35,999</span>
-            <span class="text-xs text-slate-500">8 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 7 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('10-Day Greece Island Hopping')">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Greece Islands')">
+        <img src="components/k-mitch-hodge-NTk3cZmnc5Y-unsplash.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Greece Islands</h3>
           <p class="text-sm text-slate-600 mt-2">Sunset and island hopping paradise</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹89,999</span>
-            <span class="text-xs text-slate-500">10 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 8 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('9-Day Bali Luxury Escape')">
-        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Bali Luxury')">
+        <img src="components/bali.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Bali Luxury</h3>
           <p class="text-sm text-slate-600 mt-2">Luxury resorts and beach bliss</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹75,999</span>
-            <span class="text-xs text-slate-500">9 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 9 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('14-Day Paris & Europe Tour')">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Paris & Europe')">
+        <img src="components/wyatt-simpson-v2s5IWXjly4-unsplash.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Paris & Europe</h3>
           <p class="text-sm text-slate-600 mt-2">Romance and world-class culture</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹125,999</span>
-            <span class="text-xs text-slate-500">14 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 10 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('7-Day Tokyo City Tour')">
-        <img src="https://images.unsplash.com/photo-1542051841857-5f4063f1e9e9?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Tokyo Experience')">
+        <img src="components/tokyo.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Tokyo Experience</h3>
           <p class="text-sm text-slate-600 mt-2">Modern tech and ancient traditions</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹82,499</span>
-            <span class="text-xs text-slate-500">7 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 11 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('5-Day Dubai Luxury Escape')">
-        <img src="https://images.unsplash.com/photo-1512453475868-bada1f89f87d?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Dubai Luxury')">
+        <img src="components/darcey-beau-q8D7WZc40eA-unsplash.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">Dubai Luxury</h3>
           <p class="text-sm text-slate-600 mt-2">Shopping and desert adventures</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹55,999</span>
-            <span class="text-xs text-slate-500">5 Days</span>
-          </div>
         </div>
       </div>
 
       <!-- Package 12 -->
-      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('11-Day USA East Coast Tour')">
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('USA East Coast')">
         <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
         <div class="p-6">
           <h3 class="text-lg font-bold text-slate-900">USA East Coast</h3>
           <p class="text-sm text-slate-600 mt-2">NYC and iconic landmarks</p>
-          <div class="flex items-center justify-between mt-4">
-            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹135,999</span>
-            <span class="text-xs text-slate-500">11 Days</span>
-          </div>
+        </div>
+      </div>
+
+      <!-- Package 13: Tawang -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Tawang')">
+        <img src="components/tawang.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Tawang</h3>
+          <p class="text-sm text-slate-600 mt-2">Serene monasteries and mountain vistas</p>
+        </div>
+      </div>
+
+      <!-- Package 14: Ziro Valley -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Ziro Valley')">
+        <img src="components/zero valley.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Ziro Valley</h3>
+          <p class="text-sm text-slate-600 mt-2">Tribal culture and lush green valleys</p>
+        </div>
+      </div>
+
+      <!-- Package 15: Chikmagalur -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Chikmagalur')">
+        <img src="components/chickmanglur.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Chikmagalur</h3>
+          <p class="text-sm text-slate-600 mt-2">Coffee plantations and rolling hills</p>
+        </div>
+      </div>
+
+      <!-- Package 16: Rann of Kutch -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Rann of Kutch')">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Rann of Kutch</h3>
+          <p class="text-sm text-slate-600 mt-2">Salt marshes and cultural festivals</p>
+        </div>
+      </div>
+
+      <!-- Package 17: Majuli -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Majuli')">
+        <img src="components/majuli.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Majuli</h3>
+          <p class="text-sm text-slate-600 mt-2">Island sanctuary and bird watching</p>
+        </div>
+      </div>
+
+      <!-- Package 18: Dhanushkodi -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Dhanushkodi')">
+        <img src="components/dhanushkodi.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Dhanushkodi</h3>
+          <p class="text-sm text-slate-600 mt-2">Where ocean meets spirituality</p>
+        </div>
+      </div>
+
+      <!-- Package 19: Spiti Valley -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Spiti Valley')">
+        <img src="components/spiti valley.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Spiti Valley</h3>
+          <p class="text-sm text-slate-600 mt-2">High altitude desert and ancient monasteries</p>
+        </div>
+      </div>
+
+      <!-- Package 20: Georgia -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Georgia')">
+        <img src="components/Georgia.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Georgia</h3>
+          <p class="text-sm text-slate-600 mt-2">Wine, mountains, and ancient culture</p>
+        </div>
+      </div>
+
+      <!-- Package 21: Kazakhstan -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Kazakhstan')">
+        <img src="components/Kazakhstan.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Kazakhstan</h3>
+          <p class="text-sm text-slate-600 mt-2">Steppes, cities, and nomadic heritage</p>
+        </div>
+      </div>
+
+      <!-- Package 22: Uzbekistan -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Uzbekistan')">
+        <img src="components/Uzbekistan.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Uzbekistan</h3>
+          <p class="text-sm text-slate-600 mt-2">Silk Road journey and ancient cities</p>
+        </div>
+      </div>
+
+      <!-- Package 23: Vietnam -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Vietnam')">
+        <img src="components/Vietnam.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Vietnam</h3>
+          <p class="text-sm text-slate-600 mt-2">Rice paddies, Ha Long, and street food</p>
+        </div>
+      </div>
+
+      <!-- Package 24: Philippines -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Philippines')">
+        <img src="components/Philippines.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Philippines</h3>
+          <p class="text-sm text-slate-600 mt-2">White sand beaches and island hopping</p>
+        </div>
+      </div>
+
+      <!-- Package 25: Sri Lanka -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Sri Lanka')">
+        <img src="components/Sri Lanka.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Sri Lanka</h3>
+          <p class="text-sm text-slate-600 mt-2">Tea plantations, temples, and beaches</p>
+        </div>
+      </div>
+
+      <!-- Package 26: Nepal -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Nepal')">
+        <img src="components/Nepal.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Nepal</h3>
+          <p class="text-sm text-slate-600 mt-2">Himalayas, temples, and adventure</p>
+        </div>
+      </div>
+
+      <!-- Package 27: Bhutan -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer relative group" onclick="openPackageWhatsApp('Bhutan')">
+        <img src="components/Bhutan.jpg" class="w-full h-[200px] object-cover" />
+        <div class="absolute bottom-4 right-4 bg-white rounded-full p-3 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"><img src="components/whatsapp.svg" class="h-6 w-6" /></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Bhutan</h3>
+          <p class="text-sm text-slate-600 mt-2">Kingdom of happiness and monasteries</p>
         </div>
       </div>
 

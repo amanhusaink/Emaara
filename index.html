@@ -709,9 +709,10 @@ EMAARA
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       </div>
-      <div class="w-full min-w-0">
+      <div class="w-full min-w-0 relative">
         <p class="text-xs sm:text-sm font-semibold text-gray-800">Location</p>
-        <input type="text" id="location" placeholder="Enter destination" class="text-xs text-gray-500 outline-none w-full bg-transparent">
+        <input type="text" id="location" placeholder="Enter destination" class="text-xs text-gray-500 outline-none w-full bg-transparent" onkeyup="filterSuggestions()">
+        <div id="suggestionDropdown" class="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg hidden mt-1 max-h-48 overflow-y-auto z-50"></div>
       </div>
     </div>
 
@@ -802,6 +803,140 @@ EMAARA
 </div>
 <!-- WhatsApp Redirect Script -->
 <script>
+function redirectToWhatsApp() {
+  // Get input values
+  const location = document.getElementById('location').value.trim();
+  const date = document.getElementById('date').value;
+  const price = document.getElementById('price').value;
+  
+  // Format date if provided
+  let formattedDate = '';
+  if (date) {
+    const dateObj = new Date(date);
+    formattedDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  
+  // Build message
+  let message = '*Hi! I want to plan my adventure* 🌍\n\n';
+  message += '*Trip Details:*\n';
+  
+  if (location) {
+    message += `📍 *Destination:* ${location}\n`;
+  }
+  
+  if (formattedDate) {
+    message += `📅 *Travel Date:* ${formattedDate}\n`;
+  }
+  
+  if (price) {
+    message += `💰 *Budget:* $${price}\n`;
+  }
+  
+  message += '\nPlease help me plan my trip! Thank you.';
+  
+  // Encode for URL
+  const encodedMessage = encodeURIComponent(message);
+  
+  // WhatsApp number (replace with your actual number)
+  const whatsappNumber = '917025550750'; // Format: country code + number (no + or spaces)
+  
+  // Create WhatsApp URL
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+  // Open WhatsApp
+  window.open(whatsappUrl, '_blank');
+}
+
+// Function to open WhatsApp for visa enquiries
+function openWhatsAppVisa(visaType) {
+  const whatsappNumber = '917025550750';
+  const message = `Hi! I'm interested in learning more about the ${visaType}. Can you provide more details?`;
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+}
+
+// All available locations from destination and package pages
+const allLocations = [
+  // Destinations
+  'Goa', 'Gokarna', 'Varkala', 'Andaman and Nicobar Islands', 'Manali', 'Munnar', 'Ooty', 'Leh-Ladakh',
+  'Jaipur', 'Udaipur', 'Varanasi', 'Hampi', 'Coorg', 'Rishikesh', 'Spiti Valley',
+  // Packages
+  'Taj Mahal & Agra', 'Kerala Backwaters', 'Jaipur Heritage', 'Goa Beach Paradise', 'Manali Adventure',
+  'Varanasi Spiritual', 'Greece Islands', 'Bali Luxury', 'Paris & Europe', 'Tokyo Experience', 'Dubai Luxury',
+  'USA East Coast', 'Tawang', 'Ziro Valley', 'Chikmagalur', 'Rann of Kutch', 'Majuli', 'Dhanushkodi',
+  'Spiti Valley', 'Georgia', 'Kazakhstan', 'Uzbekistan', 'Vietnam', 'Philippines', 'Sri Lanka', 'Nepal', 'Bhutan'
+];
+
+// Function to filter suggestions
+function filterSuggestions() {
+  const input = document.getElementById('location');
+  const dropdown = document.getElementById('suggestionDropdown');
+  const searchTerm = input.value.toLowerCase().trim();
+
+  if (searchTerm === '') {
+    dropdown.classList.add('hidden');
+    return;
+  }
+
+  // Filter locations based on search term
+  const allMatches = allLocations.filter(location => 
+    location.toLowerCase().includes(searchTerm)
+  );
+
+  if (allMatches.length === 0) {
+    dropdown.innerHTML = '<div class="px-4 py-3 text-gray-500 text-xs">No locations found</div>';
+    dropdown.classList.remove('hidden');
+    return;
+  }
+
+  // Separate matches: prioritize locations that START with search term
+  const startsWithMatches = allMatches.filter(location => 
+    location.toLowerCase().startsWith(searchTerm)
+  );
+  const containsMatches = allMatches.filter(location => 
+    !location.toLowerCase().startsWith(searchTerm)
+  );
+
+  // Sort each group alphabetically
+  startsWithMatches.sort((a, b) => a.localeCompare(b));
+  containsMatches.sort((a, b) => a.localeCompare(b));
+
+  // Combine: startsWith first, then contains
+  const matches = [...startsWithMatches, ...containsMatches];
+
+  // Create dropdown HTML
+  dropdown.innerHTML = matches.map(location => `
+    <div class="px-4 py-2 hover:bg-blue-50 cursor-pointer text-xs text-gray-700 border-b border-gray-100 last:border-b-0 transition-colors" onclick="selectLocation('${location}')">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+        </svg>
+        <span>${location}</span>
+      </div>
+    </div>
+  `).join('');
+
+  dropdown.classList.remove('hidden');
+}
+
+// Function to select a location from dropdown
+function selectLocation(location) {
+  document.getElementById('location').value = location;
+  document.getElementById('suggestionDropdown').classList.add('hidden');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  const locationInput = document.getElementById('location');
+  const dropdown = document.getElementById('suggestionDropdown');
+  
+  if (!event.target.closest('#location') && !event.target.closest('#suggestionDropdown')) {
+    dropdown.classList.add('hidden');
+  }
+});
+
+// Original redirect function
 function redirectToWhatsApp() {
   // Get input values
   const location = document.getElementById('location').value.trim();
