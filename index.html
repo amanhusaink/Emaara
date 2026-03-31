@@ -243,6 +243,51 @@
       transform: translateY(-8px);
     }
     
+    /* Perfect Trip Cards Animation */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .perfect-trip-card {
+      animation: slideInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .perfect-trip-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    
+    .perfect-trip-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .perfect-trip-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    
+    .perfect-trip-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    
+    .perfect-trip-card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+    
+    .perfect-trip-card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+    
+    .perfect-trip-card:hover {
+      transform: scale(1.03);
+    }
+    
     /* Destination Section Heading Animations */
     @keyframes fadeInDown {
       from {
@@ -485,22 +530,54 @@
       overflow: hidden;
       background: #0D3B4C;
       width: 100%;
-      padding: 2rem;
+      padding: 1rem 0.5rem;
     }
     
     .marquee-content {
       display: flex;
-      gap: 3rem;
+      gap: 0;
+      animation: carousel 9s infinite;
     }
     
     .marquee-item {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.3rem;
       flex-shrink: 0;
-      width: calc(33.333% - 2rem);
+      width: 100%;
       padding: 0;
       white-space: nowrap;
+      justify-content: center;
+    }
+    
+    @keyframes carousel {
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+    
+    @media (min-width: 640px) {
+      .marquee-content {
+        animation: none;
+        gap: 1rem;
+      }
+      .marquee-item {
+        width: auto;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .marquee-container {
+        padding: 2rem;
+      }
+      .marquee-content {
+        gap: 3rem;
+        justify-content: center;
+      }
+      .marquee-item {
+        width: auto;
+      }
     }
     
     /* WhatsApp Floating Button */
@@ -581,7 +658,7 @@ class="absolute w-full h-full object-cover"/>
 
 <!-- LOGO -->
 <div class="flex items-center gap-2">
-<img src="components/assets/emara logo white.png" alt="Emaara Logo" class="h-10 w-auto">
+<img src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-12 w-auto rounded-lg">
 </div>
 
 <!-- MENU -->
@@ -696,29 +773,29 @@ EMAARA
     
     <!-- Item 1 -->
     <div class="marquee-item">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-8 sm:w-8 md:h-10 md:w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
           d="M9 20l-5.447-2.724A2 2 0 013 15.382V5a2 2 0 012-2h6m0 18l6-3m-6 3V3m6 15l5.447-2.724A2 2 0 0021 13.382V5a2 2 0 00-2-2h-6m0 0v18"/>
       </svg>
-      <h2 class="text-2xl md:text-3xl font-semibold">Travel Planning</h2>
+      <h2 class="text-xs sm:text-sm md:text-2xl lg:text-3xl font-semibold">Travel Planning</h2>
     </div>
 
     <!-- Item 2 -->
     <div class="marquee-item">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-8 sm:w-8 md:h-10 md:w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
           d="M12 8c-1.657 0-3 1.343-3 3v5h6v-5c0-1.657-1.343-3-3-3zm0 0V6m0 12v2m8-10h-2M6 10H4m12.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m0 12.728l1.414-1.414M18.364 5.636l-1.414 1.414"/>
       </svg>
-      <h2 class="text-2xl md:text-3xl font-semibold">Visa Assistance</h2>
+      <h2 class="text-xs sm:text-sm md:text-2xl lg:text-3xl font-semibold">Visa Assistance</h2>
     </div>
 
     <!-- Item 3 -->
     <div class="marquee-item">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-8 sm:w-8 md:h-10 md:w-10 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
           d="M3 7h18M3 12h18M3 17h18"/>
       </svg>
-      <h2 class="text-2xl md:text-3xl font-semibold">Global Reach Immigration</h2>
+      <h2 class="text-xs sm:text-sm md:text-2xl lg:text-3xl font-semibold">Global Reach Immigration</h2>
     </div>
 
   </div>
@@ -773,6 +850,149 @@ function redirectToWhatsApp() {
 function openWhatsAppVisa(visaType) {
   const whatsappNumber = '917025550750';
   const message = `Hi! I'm interested in learning more about the ${visaType}. Can you provide more details?`;
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+}
+
+// All available destinations
+const allDestinations = [
+  { name: 'Goa', description: 'Golden beaches and vibrant nightlife.', image: 'components/assets/Goa.jpg' },
+  { name: 'Gokarna', description: 'Peaceful beaches and coastal charm.', image: 'components/assets/gokarna.jpg' },
+  { name: 'Varkala', description: 'Cliffside beauty and Ayurvedic wellness.', image: 'components/assets/varkala.jpg' },
+  { name: 'Andaman and Nicobar Islands', description: 'Tropical paradise islands and diving.', image: 'components/assets/andaman.jpg' },
+  { name: 'Manali', description: 'Snow peaks and adventure capital.', image: 'components/assets/manali.jpg' },
+  { name: 'Munnar', description: 'Tea gardens and misty hills.', image: 'components/assets/munnar.jpg' },
+  { name: 'Ooty', description: 'Queen of hill stations and boating.', image: 'components/assets/ooty.jpg' },
+  { name: 'Leh-Ladakh', description: 'High-altitude desert and monasteries.', image: 'components/assets/leh.jpg' },
+  { name: 'Jaipur', description: 'Pink city and royal palaces.', image: 'components/assets/jaipur.jpg' },
+  { name: 'Udaipur', description: 'City of lakes and palaces.', image: 'components/assets/udaipur.jpg' },
+  { name: 'Varanasi', description: 'Sacred ghats and spiritual journey.', image: 'components/assets/varanasi.jpg' },
+  { name: 'Hampi', description: 'Ancient ruins and temple heritage.', image: 'components/assets/hampi.jpg' },
+  { name: 'Coorg', description: 'Coffee plantations and green valleys.', image: 'components/assets/coorg.jpg' },
+  { name: 'Rishikesh', description: 'Yoga capital and river adventure.', image: 'components/assets/rishikesh.jpg' },
+  { name: 'Spiti Valley', description: 'Remote mountains and monasteries.', image: 'components/assets/spiti.jpg' }
+];
+
+// Function to shuffle array using Fisher-Yates algorithm
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Function to get random 6 destinations
+function getRandomDestinations() {
+  const shuffled = shuffleArray(allDestinations);
+  return shuffled.slice(0, 6);
+}
+
+// Themed trip packages for "Find Your Perfect Trip"
+const tripPackages = [
+  { 
+    name: 'Beach Getaway', 
+    description: 'Relax on pristine beaches and experience coastal paradise.', 
+    destinations: ['Goa', 'Gokarna', 'Varkala'],
+    image: 'components/assets/Goa.jpg',
+    theme: 'Beach & Sea'
+  },
+  { 
+    name: 'Mountain Adventure', 
+    description: 'Conquer peaks and explore breathtaking mountain landscapes.', 
+    destinations: ['Manali', 'Leh-Ladakh', 'Spiti Valley'],
+    image: 'components/assets/manali.jpg',
+    theme: 'Peaks & Trails'
+  },
+  { 
+    name: 'Spiritual Journey', 
+    description: 'Connect with ancient temples and spiritual destinations.', 
+    destinations: ['Varanasi', 'Rishikesh', 'Hampi'],
+    image: 'components/assets/varanasi.jpg',
+    theme: 'Soul & Spirit'
+  },
+  { 
+    name: 'Royal Palaces Tour', 
+    description: 'Experience the grandeur of ancient kingdoms and architecture.', 
+    destinations: ['Jaipur', 'Udaipur', 'Hampi'],
+    image: 'components/assets/jaipur.jpg',
+    theme: 'Heritage & Culture'
+  },
+  { 
+    name: 'Hill Station Escape', 
+    description: 'Escape to cool climate and scenic hill stations.', 
+    destinations: ['Munnar', 'Ooty', 'Coorg'],
+    image: 'components/assets/munnar.jpg',
+    theme: 'Green & Serene'
+  },
+  { 
+    name: 'Island Paradise', 
+    description: 'Explore tropical islands with pristine waters and adventure.', 
+    destinations: ['Andaman and Nicobar Islands'],
+    image: 'components/assets/andaman.jpg',
+    theme: 'Tropical Bliss'
+  }
+];
+
+// Function to render featured destinations dynamically
+function renderFeaturedDestinations() {
+  const randomDestinations = getRandomDestinations();
+  const grid = document.querySelector('.destination-grid');
+  
+  if (grid) {
+    grid.innerHTML = randomDestinations.map((dest, index) => `
+      <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('${dest.name}')" style="animation-delay: ${index * 0.1}s;">
+        <img src="${dest.image}" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold leading-tight">${dest.name}</h3>
+          <p class="text-[12px] mt-1 opacity-90 leading-snug">${dest.description}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', renderFeaturedDestinations);
+
+// Function to render "Find Your Perfect Trip" with themed packages
+function renderPerfectTripDestinations() {
+  const shuffledPackages = shuffleArray(tripPackages);
+  const selectedPackages = shuffledPackages.slice(0, 6);
+  const grid = document.querySelector('.perfect-trip-grid');
+  
+  if (grid) {
+    grid.innerHTML = selectedPackages.map((pkg, index) => `
+      <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group cursor-pointer" onclick="openDestinationWhatsApp('${pkg.name}')" style="animation-delay: ${index * 0.1}s;">
+        <img src="${pkg.image}" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+        <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
+        <div class="absolute bottom-4 left-4 text-white">
+          <h3 class="text-xl font-bold">${pkg.name}</h3>
+          <p class="text-xs mt-1 opacity-90">${pkg.description}</p>
+          <p class="text-xs mt-2 opacity-75">🎯 ${pkg.theme}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+  renderFeaturedDestinations();
+  renderPerfectTripDestinations();
+});
+
+// Function to send destination inquiry via WhatsApp
+function openDestinationWhatsApp(destination) {
+  const whatsappNumber = '917510197110';
+  const message = `Hi Emaara! 🌍 I'm interested in exploring ${destination}. Can you help me plan a trip to this amazing destination? Please share details about packages, best time to visit, and pricing. Thank you!`;
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   window.open(whatsappUrl, '_blank');
@@ -871,7 +1091,7 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
 
   <!-- Description -->
   <p class="text-gray-500 mt-3 max-w-xl text-sm relative z-10">
-    Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.
+    From visa assistance to complete travel planning, we provide comprehensive services to make your journey seamless and hassle-free every step of the way.
   </p>
 
 </div>
@@ -961,12 +1181,14 @@ We provide complete visa support, documentation guidance, and application proces
   </svg>
   <!-- Back Card -->
   <div class="back-card absolute w-[260px] h-[384px] border-2 border-teal-800 rounded-2xl 
-              rotate-[12deg] top-10 right-20 bg-gray-200">
+              rotate-[12deg] top-10 right-20 overflow-hidden shadow-lg">
+    <img src="components/assets/about2.jpg" alt="About 2" class="w-full h-full object-cover">
   </div>
 
   <!-- Front Card -->
   <div class="front-card absolute w-[260px] h-[357px] border-4 border-teal-900 rounded-2xl 
-              -rotate-[15deg] top-20 left-16 bg-gray-200 shadow-lg">
+              -rotate-[15deg] top-20 left-16 overflow-hidden shadow-lg">
+    <img src="components/assets/about1.jpg" alt="About 1" class="w-full h-full object-cover">
   </div>
 
  
@@ -993,86 +1215,21 @@ We provide complete visa support, documentation guidance, and application proces
 
     <!-- Description -->
     <p class="destination-description text-gray-500 mt-3 max-w-2xl text-sm relative z-10 leading-relaxed">
-      Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.
+      Discover some of the world's most captivating destinations. Each location offers unique experiences, rich cultures, and unforgettable memories waiting to be explored.
     </p>
 
   </div>
 
   <!-- Cards Grid -->
-  <div class="destination-grid max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="destination-grid max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+    <!-- Destination cards will be rendered here by JavaScript -->
+  </div>
 
-    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
-      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </div>
-      <div class="absolute bottom-5 left-5 right-5 text-white">
-        <h3 class="text-[16px] font-semibold leading-tight">Lapland, Finland</h3>
-        <p class="text-[12px] mt-1 opacity-90 leading-snug">Escape snowy landscapes and see the Northern Lights.</p>
-      </div>
-    </div>
-
-    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </div>
-      <div class="absolute bottom-5 left-5 right-5 text-white">
-        <h3 class="text-[16px] font-semibold leading-tight">Santorini, Greece</h3>
-        <p class="text-[12px] mt-1 opacity-90 leading-snug">Enjoy sunset vistas and iconic blue domes by the sea.</p>
-      </div>
-    </div>
-
-    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
-      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </div>
-      <div class="absolute bottom-5 left-5 right-5 text-white">
-        <h3 class="text-[16px] font-semibold leading-tight">Bali, Indonesia</h3>
-        <p class="text-[12px] mt-1 opacity-90 leading-snug">Discover lush rice terraces and serene beach escapes.</p>
-      </div>
-    </div>
-
-    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
-      <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </div>
-      <div class="absolute bottom-5 left-5 right-5 text-white">
-        <h3 class="text-[16px] font-semibold leading-tight">Kyoto, Japan</h3>
-        <p class="text-[12px] mt-1 opacity-90 leading-snug">Wander through temples and vibrant seasonal gardens.</p>
-      </div>
-    </div>
-
-    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </div>
-      <div class="absolute bottom-5 left-5 right-5 text-white">
-        <h3 class="text-[16px] font-semibold leading-tight">New York, USA</h3>
-        <p class="text-[12px] mt-1 opacity-90 leading-snug">Feel the city pulse with iconic skyline and culture.</p>
-      </div>
-    </div>
-
-    <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200">
-      <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-      </div>
-      <div class="absolute bottom-5 left-5 right-5 text-white">
-        <h3 class="text-[16px] font-semibold leading-tight">Paris, France</h3>
-        <p class="text-[12px] mt-1 opacity-90 leading-snug">Experience romance, art, and world-class cuisine.</p>
-      </div>
-    </div>
-
+  <!-- View All Button -->
+  <div class="text-center mt-12">
+    <a href="destinations.html" class="inline-block bg-[#033D5B] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#0b3342] transition">
+      View All Destinations →
+    </a>
   </div>
 
 </section>
@@ -1093,7 +1250,7 @@ We provide complete visa support, documentation guidance, and application proces
 
     <!-- Description -->
     <p class="text-gray-500 mt-3 max-w-2xl text-sm relative z-10">
-      Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.
+      With years of expertise and a dedicated team, we're committed to providing personalized service, expert guidance, and support for all your travel and visa needs.
     </p>
 
   </div>
@@ -1229,7 +1386,7 @@ We provide complete visa support, documentation guidance, and application proces
 
     <!-- Description -->
     <p class="visa-description text-gray-500 mt-3 max-w-[600px] text-[13px] relative z-10">
-      Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.
+      Navigate the visa process with confidence. Our expert team handles Business, Working, Student, and Tourist visas with precision and care to fast-track your applications.
     </p>
 
   </div>
@@ -1329,67 +1486,14 @@ We provide complete visa support, documentation guidance, and application proces
 <section id="find-perfect-trip" class="bg-white py-20 px-3 md:px-16">
   <div class="perfect-trip-heading max-w-5xl mx-auto text-center mb-10">
     <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Find Your Perfect Trip</h2>
-    <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.</p>
+    <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Browse through our curated collection of travel packages designed to match your budget, interests, and travel style for an unforgettable adventure.</p>
   </div>
 
-  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 px-3 sm:px-0">
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
-      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
-      <div class="absolute bottom-4 left-4 text-white">
-        <h3 class="text-xl font-bold">Lapland, Finland</h3>
-        <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
-      </div>
-    </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
-      <div class="absolute bottom-4 left-4 text-white">
-        <h3 class="text-xl font-bold">Lapland, Finland</h3>
-        <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
-      </div>
-    </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
-      <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
-      <div class="absolute bottom-4 left-4 text-white">
-        <h3 class="text-xl font-bold">Lapland, Finland</h3>
-        <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
-      </div>
-    </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
-      <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
-      <div class="absolute bottom-4 left-4 text-white">
-        <h3 class="text-xl font-bold">Lapland, Finland</h3>
-        <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
-      </div>
-    </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
-      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
-      <div class="absolute bottom-4 left-4 text-white">
-        <h3 class="text-xl font-bold">Lapland, Finland</h3>
-        <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
-      </div>
-    </div>
-    <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group">
-      <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-      <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
-      <div class="absolute bottom-4 left-4 text-white">
-        <h3 class="text-xl font-bold">Lapland, Finland</h3>
-        <p class="text-xs mt-1 opacity-90">Escape snowy landscapes and chase the northern lights.</p>
-      </div>
-    </div>
+  <div class="perfect-trip-grid max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 px-3 sm:px-0">
+    <!-- Random trip cards will be rendered here by JavaScript -->
   </div>
   <div class="text-center mt-10">
-    <button class="bg-[#033D5B] text-white px-8 py-2.5 rounded-full text-sm font-semibold hover:bg-[#022d47] transition">View All</button>
+    <a href="packages.html" class="inline-block bg-[#033D5B] text-white px-8 py-2.5 rounded-full text-sm font-semibold hover:bg-[#022d47] transition">View All Packages →</a>
   </div>
 </section>
 
@@ -1398,7 +1502,7 @@ We provide complete visa support, documentation guidance, and application proces
     <span class="absolute text-6xl md:text-7xl font-extrabold text-gray-200 opacity-40 inset-x-0 top-0">FOUNDER</span>
     <div class="relative z-10">
       <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Meet the Founder</h2>
-      <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.</p>
+      <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Learn about the vision and passion that drives Emaara Travel. Our founder's decade of industry experience and dedication to excellence ensures every traveler receives exceptional service.</p>
     </div>
   </div>
 
@@ -1427,7 +1531,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
     <span class="absolute text-6xl md:text-7xl font-extrabold text-gray-200 opacity-40 inset-x-0 top-0">CONTACT US</span>
     <div class="relative z-10">
       <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900">Get In Touch With US</h2>
-      <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Experience the magic of travel with carefully selected destinations that inspire adventure and wonder. Your next unforgettable journey begins here.</p>
+      <p class="text-slate-500 mt-3 max-w-3xl mx-auto">Have questions about our services or ready to book your dream trip? Reach out to our team today. We're here to help you plan the perfect travel experience.</p>
     </div>
   </div>
 
@@ -1507,7 +1611,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
 
     <!-- Column 1 -->
     <div class="relative z-10 flex flex-col items-start gap-3">
-      <img src="components/assets/emara logo white.png" alt="Emaara Logo" class="h-12 w-auto">
+      <img src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-14 w-auto rounded-lg">
     </div>
 
     <!-- Column 2 -->

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Destinations - Emaara Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .page-heading {
+      animation: fadeInDown 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .destination-card {
+      animation: zoomIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .destination-card:nth-child(1) { animation-delay: 0.1s; }
+    .destination-card:nth-child(2) { animation-delay: 0.2s; }
+    .destination-card:nth-child(3) { animation-delay: 0.3s; }
+    .destination-card:nth-child(4) { animation-delay: 0.4s; }
+    .destination-card:nth-child(5) { animation-delay: 0.5s; }
+    .destination-card:nth-child(6) { animation-delay: 0.6s; }
+    .destination-card:nth-child(7) { animation-delay: 0.7s; }
+    .destination-card:nth-child(8) { animation-delay: 0.8s; }
+    .destination-card:nth-child(9) { animation-delay: 0.9s; }
+    .destination-card:nth-child(10) { animation-delay: 1s; }
+    .destination-card:nth-child(11) { animation-delay: 1.1s; }
+    .destination-card:nth-child(12) { animation-delay: 1.2s; }
+    .destination-card:nth-child(13) { animation-delay: 1.3s; }
+    .destination-card:nth-child(14) { animation-delay: 1.4s; }
+    .destination-card:nth-child(15) { animation-delay: 1.5s; }
+
+    .destination-card:hover {
+      transform: translateY(-8px);
+    }
+  </style>
+</head>
+<body class="bg-[#f5f5f5] text-slate-900">
+  <!-- NAVBAR -->
+  <div id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 pt-6">
+      <div class="flex items-center justify-between">
+        <!-- LOGO -->
+        <div class="flex items-center gap-2">
+          <img src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-12 w-auto rounded-lg">
+        </div>
+
+        <!-- MENU -->
+        <div class="hidden md:flex items-center bg-white/20 rounded-full px-6 py-2 text-white gap-6">
+          <a href="index.html#home" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all">Home</a>
+          <a href="index.html#destination" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Destinations</a>
+          <a href="index.html#get-in-touch" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Contact</a>
+        </div>
+
+        <!-- BUTTON -->
+        <a href="index.html#home" class="bg-white text-[#033D5B] rounded-full px-6 py-2 flex items-center gap-2 font-medium hover:bg-gray-100 transition">
+          Back Home
+          <span class="bg-blue-100 text-blue-600 p-2 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="pt-32 pb-20 px-6 md:px-20 bg-white min-h-screen">
+    <!-- HEADING -->
+    <div class="page-heading text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Explore All Destinations</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">Discover our complete collection of domestic and international destinations. Choose your perfect travel experience.</p>
+    </div>
+
+    <!-- DESTINATIONS GRID -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      
+      <!-- Card 1: Goa -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Goa')">
+        <img src="components/assets/Goa.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Goa</h3>
+          <p class="text-[12px] mt-1 opacity-90">Golden beaches and vibrant nightlife.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Gokarna -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Gokarna')">
+        <img src="components/assets/gokarna.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Gokarna</h3>
+          <p class="text-[12px] mt-1 opacity-90">Peaceful beaches and coastal charm.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Varkala -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Varkala')">
+        <img src="components/assets/varkala.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Varkala</h3>
+          <p class="text-[12px] mt-1 opacity-90">Cliffside beauty and Ayurvedic wellness.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Andaman and Nicobar Islands -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Andaman and Nicobar Islands')">
+        <img src="components/assets/andaman.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Andaman & Nicobar</h3>
+          <p class="text-[12px] mt-1 opacity-90">Tropical paradise islands and diving.</p>
+        </div>
+      </div>
+
+      <!-- Card 5: Manali -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Manali')">
+        <img src="components/assets/manali.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Manali</h3>
+          <p class="text-[12px] mt-1 opacity-90">Snow peaks and adventure capital.</p>
+        </div>
+      </div>
+
+      <!-- Card 6: Munnar -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Munnar')">
+        <img src="components/assets/munnar.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Munnar</h3>
+          <p class="text-[12px] mt-1 opacity-90">Tea gardens and misty hills.</p>
+        </div>
+      </div>
+
+      <!-- Card 7: Ooty -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Ooty')">
+        <img src="components/assets/ooty.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Ooty</h3>
+          <p class="text-[12px] mt-1 opacity-90">Queen of hill stations and boating.</p>
+        </div>
+      </div>
+
+      <!-- Card 8: Leh-Ladakh -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Leh-Ladakh')">
+        <img src="components/assets/leh.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Leh-Ladakh</h3>
+          <p class="text-[12px] mt-1 opacity-90">High-altitude desert and monasteries.</p>
+        </div>
+      </div>
+
+      <!-- Card 9: Jaipur -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Jaipur')">
+        <img src="components/assets/jaipur.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Jaipur</h3>
+          <p class="text-[12px] mt-1 opacity-90">Pink city and royal palaces.</p>
+        </div>
+      </div>
+
+      <!-- Card 10: Udaipur -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Udaipur')">
+        <img src="components/assets/udaipur.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Udaipur</h3>
+          <p class="text-[12px] mt-1 opacity-90">City of lakes and palaces.</p>
+        </div>
+      </div>
+
+      <!-- Card 11: Varanasi -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Varanasi')">
+        <img src="components/assets/varanasi.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Varanasi</h3>
+          <p class="text-[12px] mt-1 opacity-90">Sacred ghats and spiritual journey.</p>
+        </div>
+      </div>
+
+      <!-- Card 12: Hampi -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Hampi')">
+        <img src="components/assets/hampi.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Hampi</h3>
+          <p class="text-[12px] mt-1 opacity-90">Ancient ruins and temple heritage.</p>
+        </div>
+      </div>
+
+      <!-- Card 13: Coorg -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Coorg')">
+        <img src="components/assets/coorg.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Coorg</h3>
+          <p class="text-[12px] mt-1 opacity-90">Coffee plantations and green valleys.</p>
+        </div>
+      </div>
+
+      <!-- Card 14: Rishikesh -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Rishikesh')">
+        <img src="components/assets/rishikesh.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Rishikesh</h3>
+          <p class="text-[12px] mt-1 opacity-90">Yoga capital and river adventure.</p>
+        </div>
+      </div>
+
+      <!-- Card 15: Spiti Valley -->
+      <div class="destination-card group w-full h-[300px] rounded-[22px] overflow-hidden relative shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('Spiti Valley')">
+        <img src="components/assets/spiti.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-[16px] font-semibold">Spiti Valley</h3>
+          <p class="text-[12px] mt-1 opacity-90">Remote mountains and monasteries.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#033D5B] text-white mt-20 py-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-20 text-center">
+      <p>© Emaara Travels 2026 | All Rights Reserved</p>
+      <p class="text-sm mt-2 opacity-80">Explore the world with us. Book your perfect trip today!</p>
+    </div>
+  </footer>
+
+  <script>
+    // Function to send destination inquiry via WhatsApp
+    function openDestinationWhatsApp(destination) {
+      const whatsappNumber = '917510197110';
+      const message = `Hi Emaara! 🌍 I'm interested in exploring ${destination}. Can you help me plan a trip to this amazing destination? Please share details about packages, best time to visit, and pricing. Thank you!`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
