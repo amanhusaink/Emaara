@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Packages - Emaara Travel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-heading {
+      animation: fadeInDown 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .package-card {
+      animation: slideInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .package-card:nth-child(1) { animation-delay: 0.1s; }
+    .package-card:nth-child(2) { animation-delay: 0.2s; }
+    .package-card:nth-child(3) { animation-delay: 0.3s; }
+    .package-card:nth-child(4) { animation-delay: 0.4s; }
+    .package-card:nth-child(5) { animation-delay: 0.5s; }
+    .package-card:nth-child(6) { animation-delay: 0.6s; }
+    .package-card:nth-child(7) { animation-delay: 0.7s; }
+    .package-card:nth-child(8) { animation-delay: 0.8s; }
+    .package-card:nth-child(9) { animation-delay: 0.9s; }
+    .package-card:nth-child(10) { animation-delay: 1s; }
+    .package-card:nth-child(11) { animation-delay: 1.1s; }
+    .package-card:nth-child(12) { animation-delay: 1.2s; }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .price-tag {
+      background: linear-gradient(135deg, #033D5B 0%, #0b3342 100%);
+    }
+  </style>
+</head>
+<body class="bg-[#f5f5f5] text-slate-900">
+  <!-- NAVBAR -->
+  <div id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 pt-6">
+      <div class="flex items-center justify-between">
+        <!-- LOGO -->
+        <div class="flex items-center gap-2">
+          <img src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-12 w-auto rounded-lg">
+        </div>
+
+        <!-- MENU -->
+        <div class="hidden md:flex items-center bg-white/20 rounded-full px-6 py-2 text-white gap-6">
+          <a href="index.html#home" class="nav-link px-4 py-2 rounded-full text-sm font-medium transition-all">Home</a>
+          <a href="index.html#find-perfect-trip" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Packages</a>
+          <a href="index.html#get-in-touch" class="nav-link px-4 py-2 rounded-full text-sm transition-all">Contact</a>
+        </div>
+
+        <!-- BUTTON -->
+        <a href="index.html#home" class="bg-white text-[#033D5B] rounded-full px-6 py-2 flex items-center gap-2 font-medium hover:bg-gray-100 transition">
+          Back Home
+          <span class="bg-blue-100 text-blue-600 p-2 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="pt-32 pb-20 px-6 md:px-20 bg-white min-h-screen">
+    <!-- HEADING -->
+    <div class="page-heading text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Our Travel Packages</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">Explore our carefully curated travel packages designed for every budget and preference. From adventure seekers to luxury travelers, we have something for everyone.</p>
+    </div>
+
+    <!-- PACKAGES GRID -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      
+      <!-- Package 1 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('7-Day Taj Mahal & Agra Tour')">
+        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Taj Mahal & Agra</h3>
+          <p class="text-sm text-slate-600 mt-2">Experience the monument of eternal love</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹25,999</span>
+            <span class="text-xs text-slate-500">7 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('5-Day Kerala Backwaters Cruise')">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Kerala Backwaters</h3>
+          <p class="text-sm text-slate-600 mt-2">Serene lagoons and tropical paradise</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹32,499</span>
+            <span class="text-xs text-slate-500">5 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('6-Day Jaipur Royal Heritage Tour')">
+        <img src="https://images.unsplash.com/photo-1599661046289-e31897846313?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Jaipur Heritage</h3>
+          <p class="text-sm text-slate-600 mt-2">Royal palaces and pink city culture</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹28,999</span>
+            <span class="text-xs text-slate-500">6 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 4 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('4-Day Goa Beach Getaway')">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Goa Beach Paradise</h3>
+          <p class="text-sm text-slate-600 mt-2">Golden sands and tropical vibes</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹18,999</span>
+            <span class="text-xs text-slate-500">4 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 5 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('5-Day Manali Adventure Package')">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Manali Adventure</h3>
+          <p class="text-sm text-slate-600 mt-2">Mountains and thrilling experiences</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹22,499</span>
+            <span class="text-xs text-slate-500">5 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 6 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('8-Day Varanasi Spiritual Journey')">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Varanasi Spiritual</h3>
+          <p class="text-sm text-slate-600 mt-2">Sacred spiritual journey and culture</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹35,999</span>
+            <span class="text-xs text-slate-500">8 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 7 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('10-Day Greece Island Hopping')">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Greece Islands</h3>
+          <p class="text-sm text-slate-600 mt-2">Sunset and island hopping paradise</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹89,999</span>
+            <span class="text-xs text-slate-500">10 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 8 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('9-Day Bali Luxury Escape')">
+        <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Bali Luxury</h3>
+          <p class="text-sm text-slate-600 mt-2">Luxury resorts and beach bliss</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹75,999</span>
+            <span class="text-xs text-slate-500">9 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 9 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('14-Day Paris & Europe Tour')">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Paris & Europe</h3>
+          <p class="text-sm text-slate-600 mt-2">Romance and world-class culture</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹125,999</span>
+            <span class="text-xs text-slate-500">14 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 10 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('7-Day Tokyo City Tour')">
+        <img src="https://images.unsplash.com/photo-1542051841857-5f4063f1e9e9?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Tokyo Experience</h3>
+          <p class="text-sm text-slate-600 mt-2">Modern tech and ancient traditions</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹82,499</span>
+            <span class="text-xs text-slate-500">7 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 11 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('5-Day Dubai Luxury Escape')">
+        <img src="https://images.unsplash.com/photo-1512453475868-bada1f89f87d?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">Dubai Luxury</h3>
+          <p class="text-sm text-slate-600 mt-2">Shopping and desert adventures</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹55,999</span>
+            <span class="text-xs text-slate-500">5 Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package 12 -->
+      <div class="package-card bg-white rounded-3xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openPackageWhatsApp('11-Day USA East Coast Tour')">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80" class="w-full h-[200px] object-cover" />
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-slate-900">USA East Coast</h3>
+          <p class="text-sm text-slate-600 mt-2">NYC and iconic landmarks</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="price-tag text-white px-4 py-2 rounded-full text-sm font-semibold">₹135,999</span>
+            <span class="text-xs text-slate-500">11 Days</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#033D5B] text-white mt-20 py-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-20 text-center">
+      <p>© Emaara Travels 2026 | All Rights Reserved</p>
+      <p class="text-sm mt-2 opacity-80">Book your perfect travel package today!</p>
+    </div>
+  </footer>
+
+  <script>
+    // Function to send package inquiry via WhatsApp
+    function openPackageWhatsApp(packageName) {
+      const whatsappNumber = '917510197110';
+      const message = `Hi Emaara! 📦 I'm interested in the "${packageName}" package. Please send me details about inclusions, pricing, available dates, and booking process. Thank you!`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
