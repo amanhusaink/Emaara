@@ -59,14 +59,17 @@
     
     .animate-fade-in-up {
       animation: fadeInUp 0.8s ease-out forwards;
+      will-change: transform, opacity;
     }
     
     .animate-slide-in-down {
       animation: slideInDown 0.6s ease-out forwards;
+      will-change: transform, opacity;
     }
     
     .animate-scale-in {
       animation: scaleIn 0.7s ease-out forwards;
+      will-change: transform, opacity;
     }
     
     .animate-pulse-glow {
@@ -75,21 +78,25 @@
     
     .hero-title {
       animation: fadeInUp 1s ease-out 0.3s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .hero-subtitle {
       animation: fadeInUp 1s ease-out 0.5s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .hero-description {
       animation: fadeInUp 1s ease-out 0.7s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .hero-search {
       animation: slideInDown 1s ease-out 0.9s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -127,8 +134,9 @@
     
     .service-card {
       animation: slideInLeft 0.6s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     
     .service-card:nth-child(1) {
@@ -149,7 +157,7 @@
     }
     
     .service-icon {
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     
     .service-card:hover .service-icon {
@@ -158,6 +166,7 @@
     
     .graphics-section {
       animation: slideInRight 0.8s ease-out 0.2s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -176,12 +185,14 @@
     .back-card {
       --rotation: 12deg;
       animation: rotateIn 0.7s ease-out 0.5s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .front-card {
       --rotation: -15deg;
       animation: rotateIn 0.7s ease-out 0.8s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -213,6 +224,7 @@
     
     .destination-card {
       animation: zoomIn 0.6s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -258,6 +270,7 @@
     
     .perfect-trip-card {
       animation: slideInUp 0.6s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -312,26 +325,31 @@
     
     .destination-section-heading {
       animation: fadeInDown 0.8s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .destination-bg-text {
       animation: fadeIn 0.8s ease-out 0.2s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .destination-title {
       animation: fadeInDown 0.8s ease-out 0.4s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .destination-description {
       animation: fadeInUp 0.8s ease-out 0.6s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .destination-grid {
       animation: fadeIn 0.6s ease-out 0.8s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -350,7 +368,7 @@
     .center-image {
       opacity: 0;
       transform: translateY(40px);
-      transition: all 0.8s ease-out;
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
     
     .center-image.scrolled {
@@ -361,7 +379,7 @@
     .left-card {
       opacity: 0;
       transform: translateX(-40px);
-      transition: all 0.6s ease-out;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
     
     .left-card.scrolled {
@@ -380,7 +398,7 @@
     .right-card {
       opacity: 0;
       transform: translateX(40px);
-      transition: all 0.6s ease-out;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
     
     .right-card.scrolled {
@@ -403,21 +421,25 @@
     /* Visa Services Section Animations */
     .visa-section-heading {
       animation: fadeInDown 0.8s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .visa-bg-text {
       animation: fadeIn 0.8s ease-out 0.2s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .visa-title {
       animation: fadeInDown 0.8s ease-out 0.4s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .visa-description {
       animation: fadeInUp 0.8s ease-out 0.6s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -434,6 +456,7 @@
     
     .visa-card {
       animation: flipIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      will-change: transform, opacity;
       opacity: 0;
       perspective: 1000px;
     }
@@ -457,11 +480,13 @@
     /* Find Your Perfect Trip Section */
     .perfect-trip-heading {
       animation: fadeInDown 0.8s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .perfect-trip-card {
       animation: slideInUp 0.8s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -492,38 +517,45 @@
     /* Founder Section */
     .founder-heading {
       animation: fadeInDown 0.8s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .founder-image {
       animation: slideInLeft 0.8s ease-out 0.3s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .founder-quote {
       animation: slideInRight 0.8s ease-out 0.5s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     /* Contact Section */
     .contact-heading {
       animation: fadeInDown 0.8s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .contact-form {
       animation: slideInUp 0.8s ease-out 0.3s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     .contact-info {
       animation: slideInUp 0.8s ease-out 0.5s forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
     /* Footer Section */
     .footer-content {
       animation: fadeIn 0.8s ease-out forwards;
+      will-change: transform, opacity;
       opacity: 0;
     }
     
@@ -596,7 +628,7 @@
       background-color: #25D366;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
       text-decoration: none;
     }
     
@@ -648,6 +680,8 @@
       100% { opacity: 1; }
     }
   </style>
+<link rel="preload" as="image" href="components/assets/emaara_hero.jpg">
+<link rel="preload" as="image" href="components/assets/emaara_hero2.jpg">
 </head>
 <body class="bg-slate-900 text-slate-100">
   <div class="min-h-screen bg-[url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center relative">
@@ -657,8 +691,8 @@
 
 <!-- BACKGROUND IMAGE (Carousel) -->
 <div class="absolute inset-0 w-full h-full bg-slate-900">
-  <img src="components/assets/emaara_hero2.jpg" class="absolute w-full h-full object-cover"/>
-  <img src="components/assets/emaara_hero.jpg" class="absolute w-full h-full object-cover hero-carousel-bg"/>
+  <img fetchpriority="high" src="components/assets/emaara_hero2.jpg" class="absolute w-full h-full object-cover"/>
+  <img fetchpriority="high" src="components/assets/emaara_hero.jpg" class="absolute w-full h-full object-cover hero-carousel-bg"/>
 </div>
 
 <!-- DARK OVERLAY -->
@@ -672,7 +706,7 @@
 
 <!-- LOGO -->
 <div class="flex items-center gap-2">
-<img src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-12 w-auto rounded-lg">
+<img loading="lazy" src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-12 w-auto rounded-lg">
 </div>
 
 <!-- MENU -->
@@ -1108,7 +1142,7 @@ function renderFeaturedDestinations() {
   if (grid) {
     grid.innerHTML = randomDestinations.map((dest, index) => `
       <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('${dest.name}')" style="animation-delay: ${index * 0.1}s;">
-        <img src="${dest.image}" class="w-full h-full object-cover" />
+        <img loading="lazy" src="${dest.image}" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
         <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -1134,7 +1168,7 @@ function renderPerfectTripDestinations() {
   if (grid) {
     grid.innerHTML = selectedPackages.map((pkg, index) => `
       <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group cursor-pointer" onclick="openDestinationWhatsApp('${pkg.name}')" style="animation-delay: ${index * 0.1}s;">
-        <img src="${pkg.image}" class="w-full h-full object-cover" />
+        <img loading="lazy" src="${pkg.image}" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
         <div class="absolute bottom-4 left-4 text-white">
@@ -1348,13 +1382,13 @@ We provide complete visa support, documentation guidance, and application proces
          <!-- Back Card -->
          <div class="back-card absolute w-[260px] h-[384px] border-2 border-teal-800 rounded-2xl 
                      rotate-[12deg] top-10 right-20 overflow-hidden shadow-lg">
-           <img src="components/assets/about2.jpg" alt="About 2" class="w-full h-full object-cover">
+           <img loading="lazy" src="components/assets/about2.jpg" alt="About 2" class="w-full h-full object-cover">
          </div>
 
          <!-- Front Card -->
          <div class="front-card absolute w-[260px] h-[357px] border-4 border-teal-900 rounded-2xl 
                      -rotate-[15deg] top-20 left-16 overflow-hidden shadow-lg">
-           <img src="components/assets/about1.jpg" alt="About 1" class="w-full h-full object-cover">
+           <img loading="lazy" src="components/assets/about1.jpg" alt="About 1" class="w-full h-full object-cover">
          </div>
        </div>
 
@@ -1426,7 +1460,7 @@ We provide complete visa support, documentation guidance, and application proces
     <!-- LEFT COLUMN -->
     <div class="flex flex-col gap-6">
       
-  <img src="components/flight.png"
+  <img loading="lazy" src="components/flight.png"
            class="left-card rounded-[24px] h-[200px] object-cover w-full">
 
       <!-- Why Choose Us Points -->
@@ -1476,7 +1510,7 @@ We provide complete visa support, documentation guidance, and application proces
 
     <!-- CENTER IMAGE -->
     <div class="flex justify-center">
-      <img src="components/man.png" class="center-image rounded-[28px] h-[664px] w-full object-cover">
+      <img loading="lazy" src="components/man.png" class="center-image rounded-[28px] h-[664px] w-full object-cover">
     </div>
 
     <!-- RIGHT COLUMN -->
@@ -1526,7 +1560,7 @@ We provide complete visa support, documentation guidance, and application proces
         </div>
       </div>
 
-      <img src="components/Rectangle 5683.png" class="right-card rounded-[28px] h-[200px] object-cover w-full">
+      <img loading="lazy" src="components/Rectangle 5683.png" class="right-card rounded-[28px] h-[200px] object-cover w-full">
 
 
     </div>
@@ -1563,7 +1597,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="components/Ticket.jpg" alt="Business Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/Ticket.jpg" alt="Business Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1584,7 +1618,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="components/visa.jpg" alt="Working Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/visa.jpg" alt="Working Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1605,7 +1639,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="components/attila-lisinszky-GnqsJz0x-dI-unsplash.jpg " alt="Student Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/attila-lisinszky-GnqsJz0x-dI-unsplash.jpg " alt="Student Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1626,7 +1660,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px] relative">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img src="components/passport.jpg" alt="Tourist Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/passport.jpg" alt="Tourist Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1673,7 +1707,7 @@ We provide complete visa support, documentation guidance, and application proces
 
   <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
     <div class="founder-image rounded-3xl bg-gray-200 h-[400px] lg:h-[500px] overflow-hidden">
-      <img src="components/assets/afnas.png" alt="Founder" class="w-full h-full object-cover object-center" style="object-position: center 30%;">
+      <img loading="lazy" src="components/assets/afnas.png" alt="Founder" class="w-full h-full object-cover object-center" style="object-position: center 30%;">
     </div>
     <div class="founder-quote rounded-3xl bg-gradient-to-br from-[#0a3d67] to-[#04486f] text-white p-8 md:p-10 flex flex-col justify-between h-auto lg:h-[500px]">
       <div>
@@ -1730,9 +1764,9 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
         <p class="mt-4 text-sm text-slate-600">Lorem ipsum is simply dummy text the printing and typesetting industry’s standard dummy text ever.</p>
       </div>
       <div class="mt-6 space-y-3 text-sm text-slate-700">
-        <div class="flex items-center gap-3"><span><img class="h-[16px]" src="components/phone.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
-        <div class="flex items-center gap-3"><span><img class="h-[16px]" src="components/clock.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
-        <div class="flex items-center gap-3"><span><img class="h-[16px]" src="components/location.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
+        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/phone.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
+        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/clock.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
+        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/location.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
       </div>
     </div>
   </div>
@@ -1746,7 +1780,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
     <!-- Left -->
     <div class="flex items-center gap-4">
       <div class="w-12 h-12 bg-[#1b6b85] rounded-full flex items-center justify-center text-xl">
-        <img src="components/010-currency.png" alt="">
+        <img loading="lazy" src="components/010-currency.png" alt="">
       </div>
       <p class="text-[16px] font-medium">
         Need Any Support For <br> Tour And Visa?
@@ -1759,7 +1793,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
     <!-- Right -->
     <div class="flex items-center gap-4">
       <div class="w-12 h-12 bg-[#1b6b85] rounded-full flex items-center justify-center text-xl">
-        <img src="components/earth.png" alt="">
+        <img loading="lazy" src="components/earth.png" alt="">
       </div>
       <p class="text-[16px] font-medium">
         Are You Ready For Get <br> Started Travelling?
@@ -1776,7 +1810,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
 
     <!-- Column 1 -->
     <div class="relative z-10 flex flex-col items-start gap-3">
-      <img src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-14 w-auto rounded-lg">
+      <img loading="lazy" src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-14 w-auto rounded-lg">
     </div>
 
     <!-- Column 2 -->
@@ -1900,7 +1934,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
   
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/917025550750?text=Hello%20Emaara%20Travels" target="_blank" class="whatsapp-floating-btn" title="Chat with us on WhatsApp">
-    <img src="components/whatsapp.svg" alt="WhatsApp">
+    <img loading="lazy" src="components/whatsapp.svg" alt="WhatsApp">
   </a>
 </body>
 </html>
