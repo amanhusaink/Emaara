@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emaara Travel</title>
-  <link rel="icon" type="image/jpeg" href="components/assets/favicon.jpeg" />
+  <link rel="icon" type="image/jpeg" href="components/assets/optimized/favicon.jpeg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @layer utilities {
@@ -673,6 +673,15 @@
     .hero-carousel-bg {
       animation: heroFadeOut 10s infinite ease-in-out;
     }
+
+    /* Slightly zoom out hero images on small screens so more of the background is visible */
+    @media (max-width: 768px) {
+      .hero-img {
+        transform: scale(0.94);
+        transition: transform 400ms ease;
+        transform-origin: center;
+      }
+    }
     
     @keyframes heroFadeOut {
       0%, 40% { opacity: 1; }
@@ -680,8 +689,10 @@
       100% { opacity: 1; }
     }
   </style>
-<link rel="preload" as="image" href="components/assets/emaara_hero.jpg">
-<link rel="preload" as="image" href="components/assets/emaara_hero2.jpg">
+<link rel="preload" as="image" href="components/assets/optimized/emaara_hero.jpg">
+<link rel="preload" as="image" href="components/assets/optimized/emaara_hero2.jpg">
+<!-- Preload: additional hero image provided by user -->
+<link rel="preload" as="image" href="components/assets/optimized/emaara_hero3.jpg">
 </head>
 <body class="bg-slate-900 text-slate-100">
   <div class="min-h-screen bg-[url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center relative">
@@ -691,8 +702,10 @@
 
 <!-- BACKGROUND IMAGE (Carousel) -->
 <div class="absolute inset-0 w-full h-full bg-slate-900">
-  <img fetchpriority="high" src="components/assets/emaara_hero2.jpg" class="absolute w-full h-full object-cover"/>
-  <img fetchpriority="high" src="components/assets/emaara_hero.jpg" class="absolute w-full h-full object-cover hero-carousel-bg"/>
+  <img fetchpriority="high" src="components/assets/optimized/emaara_hero2.jpg" class="hero-img absolute w-full h-full object-cover"/>
+  <img fetchpriority="high" src="components/assets/optimized/emaara_hero.jpg" class="hero-img absolute w-full h-full object-cover hero-carousel-bg"/>
+  <!-- User-provided hero image (place the file at components/assets/optimized/emaara_hero3.jpg) -->
+  <img fetchpriority="high" src="components/assets/optimized/Hero1.jpg" alt="Emaara hero image" class="hero-img absolute w-full h-full object-cover hero-carousel-bg" style="opacity:0; animation: fadeInUp 1s ease-out 0.2s forwards;"/>
 </div>
 
 <!-- DARK OVERLAY -->
@@ -706,7 +719,7 @@
 
 <!-- LOGO -->
 <div class="flex items-center gap-2">
-<img loading="lazy" src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-12 w-auto rounded-lg">
+<img loading="lazy" src="components/assets/optimized/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-12 w-auto rounded-lg">
 </div>
 
 <!-- MENU -->
@@ -742,13 +755,13 @@ EMAARA Tours & Travels LLP
 <h2 class="mt-4 text-lg">your trusted travel partner</h2>
 
 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 font-medium text-sm md:text-base">
-  <a href="tel:+917510197110" class="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full hover:bg-white/20 transition-all shadow-lg">
+  <a href="tel:+917510197110" class="relative z-40 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full hover:bg-white/20 transition-all shadow-lg">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
     </svg>
     +91 7510197110
   </a>
-  <a href="tel:+917025550750" class="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full hover:bg-white/20 transition-all shadow-lg">
+  <a href="tel:+917025550750" class="relative z-40 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full hover:bg-white/20 transition-all shadow-lg">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
     </svg>
@@ -1055,21 +1068,21 @@ function openWhatsAppVisa(visaType) {
 
 // All available destinations
 const allDestinations = [
-  { name: 'Goa', description: 'Golden beaches and vibrant nightlife.', image: 'components/assets/Goa.jpg' },
-  { name: 'Gokarna', description: 'Peaceful beaches and coastal charm.', image: 'components/assets/gokarna.jpg' },
-  { name: 'Varkala', description: 'Cliffside beauty and Ayurvedic wellness.', image: 'components/assets/varkala.jpg' },
-  { name: 'Andaman and Nicobar Islands', description: 'Tropical paradise islands and diving.', image: 'components/assets/andaman.jpg' },
-  { name: 'Manali', description: 'Snow peaks and adventure capital.', image: 'components/assets/manali.jpg' },
-  { name: 'Munnar', description: 'Tea gardens and misty hills.', image: 'components/assets/munnar.jpg' },
-  { name: 'Ooty', description: 'Queen of hill stations and boating.', image: 'components/assets/ooty.jpg' },
-  { name: 'Leh-Ladakh', description: 'High-altitude desert and monasteries.', image: 'components/assets/leh.jpg' },
-  { name: 'Jaipur', description: 'Pink city and royal palaces.', image: 'components/assets/jaipur.jpg' },
-  { name: 'Udaipur', description: 'City of lakes and palaces.', image: 'components/assets/udaipur.jpg' },
-  { name: 'Varanasi', description: 'Sacred ghats and spiritual journey.', image: 'components/assets/varanasi.jpg' },
-  { name: 'Hampi', description: 'Ancient ruins and temple heritage.', image: 'components/assets/hampi.jpg' },
-  { name: 'Coorg', description: 'Coffee plantations and green valleys.', image: 'components/assets/coorg.jpg' },
-  { name: 'Rishikesh', description: 'Yoga capital and river adventure.', image: 'components/assets/rishikesh.jpg' },
-  { name: 'Spiti Valley', description: 'Remote mountains and monasteries.', image: 'components/assets/spiti.jpg' }
+  { name: 'Goa', description: 'Golden beaches and vibrant nightlife.', image: 'components/assets/optimized/Goa.jpg' },
+  { name: 'Gokarna', description: 'Peaceful beaches and coastal charm.', image: 'components/assets/optimized/gokarna.jpg' },
+  { name: 'Varkala', description: 'Cliffside beauty and Ayurvedic wellness.', image: 'components/assets/optimized/varkala.jpg' },
+  { name: 'Andaman and Nicobar Islands', description: 'Tropical paradise islands and diving.', image: 'components/assets/optimized/andaman.jpg' },
+  { name: 'Manali', description: 'Snow peaks and adventure capital.', image: 'components/assets/optimized/manali.jpg' },
+  { name: 'Munnar', description: 'Tea gardens and misty hills.', image: 'components/assets/optimized/munnar.jpg' },
+  { name: 'Ooty', description: 'Queen of hill stations and boating.', image: 'components/assets/optimized/ooty.jpg' },
+  { name: 'Leh-Ladakh', description: 'High-altitude desert and monasteries.', image: 'components/assets/optimized/leh.jpg' },
+  { name: 'Jaipur', description: 'Pink city and royal palaces.', image: 'components/assets/optimized/jaipur.jpg' },
+  { name: 'Udaipur', description: 'City of lakes and palaces.', image: 'components/assets/optimized/udaipur.jpg' },
+  { name: 'Varanasi', description: 'Sacred ghats and spiritual journey.', image: 'components/assets/optimized/varanasi.jpg' },
+  { name: 'Hampi', description: 'Ancient ruins and temple heritage.', image: 'components/assets/optimized/hampi.jpg' },
+  { name: 'Coorg', description: 'Coffee plantations and green valleys.', image: 'components/assets/optimized/coorg.jpg' },
+  { name: 'Rishikesh', description: 'Yoga capital and river adventure.', image: 'components/assets/optimized/rishikesh.jpg' },
+  { name: 'Spiti Valley', description: 'Remote mountains and monasteries.', image: 'components/assets/optimized/spiti.jpg' }
 ];
 
 // Function to shuffle array using Fisher-Yates algorithm
@@ -1094,42 +1107,42 @@ const tripPackages = [
     name: 'Beach Getaway', 
     description: 'Relax on pristine beaches and experience coastal paradise.', 
     destinations: ['Goa', 'Gokarna', 'Varkala'],
-    image: 'components/assets/Goa.jpg',
+  image: 'components/assets/optimized/Goa.jpg',
     theme: 'Beach & Sea'
   },
   { 
     name: 'Mountain Adventure', 
     description: 'Conquer peaks and explore breathtaking mountain landscapes.', 
     destinations: ['Manali', 'Leh-Ladakh', 'Spiti Valley'],
-    image: 'components/assets/manali.jpg',
+  image: 'components/assets/optimized/manali.jpg',
     theme: 'Peaks & Trails'
   },
   { 
     name: 'Spiritual Journey', 
     description: 'Connect with ancient temples and spiritual destinations.', 
     destinations: ['Varanasi', 'Rishikesh', 'Hampi'],
-    image: 'components/assets/varanasi.jpg',
+  image: 'components/assets/optimized/varanasi.jpg',
     theme: 'Soul & Spirit'
   },
   { 
     name: 'Royal Palaces Tour', 
     description: 'Experience the grandeur of ancient kingdoms and architecture.', 
     destinations: ['Jaipur', 'Udaipur', 'Hampi'],
-    image: 'components/assets/jaipur.jpg',
+  image: 'components/assets/optimized/jaipur.jpg',
     theme: 'Heritage & Culture'
   },
   { 
     name: 'Hill Station Escape', 
     description: 'Escape to cool climate and scenic hill stations.', 
     destinations: ['Munnar', 'Ooty', 'Coorg'],
-    image: 'components/assets/munnar.jpg',
+  image: 'components/assets/optimized/munnar.jpg',
     theme: 'Green & Serene'
   },
   { 
     name: 'Island Paradise', 
     description: 'Explore tropical islands with pristine waters and adventure.', 
     destinations: ['Andaman and Nicobar Islands'],
-    image: 'components/assets/andaman.jpg',
+  image: 'components/assets/optimized/andaman.jpg',
     theme: 'Tropical Bliss'
   }
 ];
@@ -1382,13 +1395,13 @@ We provide complete visa support, documentation guidance, and application proces
          <!-- Back Card -->
          <div class="back-card absolute w-[260px] h-[384px] border-2 border-teal-800 rounded-2xl 
                      rotate-[12deg] top-10 right-20 overflow-hidden shadow-lg">
-           <img loading="lazy" src="components/assets/about2.jpg" alt="About 2" class="w-full h-full object-cover">
+           <img loading="lazy" src="components/assets/optimized/about2.jpg" alt="About 2" class="w-full h-full object-cover">
          </div>
 
          <!-- Front Card -->
          <div class="front-card absolute w-[260px] h-[357px] border-4 border-teal-900 rounded-2xl 
                      -rotate-[15deg] top-20 left-16 overflow-hidden shadow-lg">
-           <img loading="lazy" src="components/assets/about1.jpg" alt="About 1" class="w-full h-full object-cover">
+           <img loading="lazy" src="components/assets/optimized/about1.jpg" alt="About 1" class="w-full h-full object-cover">
          </div>
        </div>
 
@@ -1460,7 +1473,7 @@ We provide complete visa support, documentation guidance, and application proces
     <!-- LEFT COLUMN -->
     <div class="flex flex-col gap-6">
       
-  <img loading="lazy" src="components/flight.png"
+  <img loading="lazy" src="components/optimized/flight.png"
            class="left-card rounded-[24px] h-[200px] object-cover w-full">
 
       <!-- Why Choose Us Points -->
@@ -1510,7 +1523,7 @@ We provide complete visa support, documentation guidance, and application proces
 
     <!-- CENTER IMAGE -->
     <div class="flex justify-center">
-      <img loading="lazy" src="components/man.png" class="center-image rounded-[28px] h-[664px] w-full object-cover">
+      <img loading="lazy" src="components/optimized/man.png" class="center-image rounded-[28px] h-[664px] w-full object-cover">
     </div>
 
     <!-- RIGHT COLUMN -->
@@ -1560,7 +1573,7 @@ We provide complete visa support, documentation guidance, and application proces
         </div>
       </div>
 
-      <img loading="lazy" src="components/Rectangle 5683.png" class="right-card rounded-[28px] h-[200px] object-cover w-full">
+      <img loading="lazy" src="components/optimized/Rectangle 5683.png" class="right-card rounded-[28px] h-[200px] object-cover w-full">
 
 
     </div>
@@ -1597,7 +1610,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img loading="lazy" src="components/Ticket.jpg" alt="Business Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/optimized/Ticket.jpg" alt="Business Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1618,7 +1631,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img loading="lazy" src="components/visa.jpg" alt="Working Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/optimized/visa.jpg" alt="Working Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1639,7 +1652,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px]">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img loading="lazy" src="components/attila-lisinszky-GnqsJz0x-dI-unsplash.jpg " alt="Student Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/optimized/attila-lisinszky-GnqsJz0x-dI-unsplash.jpg" alt="Student Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1660,7 +1673,7 @@ We provide complete visa support, documentation guidance, and application proces
     <div class="visa-card bg-[#033D5B] rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-[400px] relative">
       <!-- Image -->
       <div class="h-[200px] w-full bg-gray-400 overflow-hidden flex-shrink-0">
-        <img loading="lazy" src="components/passport.jpg" alt="Tourist Visa" class="w-full h-full object-cover">
+        <img loading="lazy" src="components/optimized/passport.jpg" alt="Tourist Visa" class="w-full h-full object-cover">
       </div>
       <!-- Content -->
       <div class="p-6 flex flex-col justify-between flex-1">
@@ -1707,7 +1720,7 @@ We provide complete visa support, documentation guidance, and application proces
 
   <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
     <div class="founder-image rounded-3xl bg-gray-200 h-[400px] lg:h-[500px] overflow-hidden">
-      <img loading="lazy" src="components/assets/afnas.png" alt="Founder" class="w-full h-full object-cover object-center" style="object-position: center 30%;">
+  <img loading="lazy" src="components/assets/optimized/afnas.png" alt="Founder" class="w-full h-full object-cover object-center" style="object-position: center 30%;">
     </div>
     <div class="founder-quote rounded-3xl bg-gradient-to-br from-[#0a3d67] to-[#04486f] text-white p-8 md:p-10 flex flex-col justify-between h-auto lg:h-[500px]">
       <div>
@@ -1764,9 +1777,9 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
         <p class="mt-4 text-sm text-slate-600">Lorem ipsum is simply dummy text the printing and typesetting industry’s standard dummy text ever.</p>
       </div>
       <div class="mt-6 space-y-3 text-sm text-slate-700">
-        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/phone.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
-        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/clock.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
-        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/location.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
+        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/optimized/phone.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Requesting a call</p><p class="font-semibold text-[#046EA5]"><a href="tel:+917510197110">+91 7510197110</a></p></div></div>
+        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/optimized/clock.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Open hours</p><p class="font-semibold text-[#046EA5]">9 am – 8 pm</p></div></div>
+        <div class="flex items-center gap-3"><span><img loading="lazy" class="h-[16px]" src="components/optimized/location.png" alt=""></span><div><p class="text-xs uppercase text-slate-400">Location</p><p class="font-semibold text-[#046EA5]">Kattangal</p></div></div>
       </div>
     </div>
   </div>
@@ -1780,7 +1793,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
     <!-- Left -->
     <div class="flex items-center gap-4">
       <div class="w-12 h-12 bg-[#1b6b85] rounded-full flex items-center justify-center text-xl">
-        <img loading="lazy" src="components/010-currency.png" alt="">
+        <img loading="lazy" src="components/optimized/010-currency.png" alt="">
       </div>
       <p class="text-[16px] font-medium">
         Need Any Support For <br> Tour And Visa?
@@ -1793,7 +1806,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
     <!-- Right -->
     <div class="flex items-center gap-4">
       <div class="w-12 h-12 bg-[#1b6b85] rounded-full flex items-center justify-center text-xl">
-        <img loading="lazy" src="components/earth.png" alt="">
+        <img loading="lazy" src="components/optimized/earth.png" alt="">
       </div>
       <p class="text-[16px] font-medium">
         Are You Ready For Get <br> Started Travelling?
@@ -1810,7 +1823,7 @@ At Emaara, we go beyond visa processing, we curate journeys with precision and c
 
     <!-- Column 1 -->
     <div class="relative z-10 flex flex-col items-start gap-3">
-      <img loading="lazy" src="components/assets/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-14 w-auto rounded-lg">
+  <img loading="lazy" src="components/assets/optimized/emaralogo-bg.jpeg" alt="Emaara Logo" class="h-14 w-auto rounded-lg">
     </div>
 
     <!-- Column 2 -->
