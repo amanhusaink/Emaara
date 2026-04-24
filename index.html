@@ -897,15 +897,15 @@ function redirectToWhatsApp() {
   message += '*Trip Details:*\n';
   
   if (location) {
-    message += `📍 *Destination:* ${location}\n`;
+    message += `📍 *Destination:* ₹{location}\n`;
   }
   
   if (formattedDate) {
-    message += `📅 *Travel Date:* ${formattedDate}\n`;
+    message += `📅 *Travel Date:* ₹{formattedDate}\n`;
   }
   
   if (price) {
-    message += `💰 *Budget:* ₹${price}\n`;
+    message += `💰 *Budget:* ₹₹{price}\n`;
   }
   
   message += '\nPlease help me plan my trip! Thank you.';
@@ -917,7 +917,7 @@ function redirectToWhatsApp() {
   const whatsappNumber = '917025550750'; // Format: country code + number (no + or spaces)
   
   // Create WhatsApp URL
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/₹{whatsappNumber}?text=₹{encodedMessage}`;
   
   // Open WhatsApp
   window.open(whatsappUrl, '_blank');
@@ -926,9 +926,9 @@ function redirectToWhatsApp() {
 // Function to open WhatsApp for visa enquiries
 function openWhatsAppVisa(visaType) {
   const whatsappNumber = '917025550750';
-  const message = `Hi! I'm interested in learning more about the ${visaType}. Can you provide more details?`;
+  const message = `Hi! I'm interested in learning more about the ₹{visaType}. Can you provide more details?`;
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/₹{whatsappNumber}?text=₹{encodedMessage}`;
   window.open(whatsappUrl, '_blank');
 }
 
@@ -983,12 +983,12 @@ function filterSuggestions() {
 
   // Create dropdown HTML
   dropdown.innerHTML = matches.map(location => `
-    <div class="px-4 py-2 hover:bg-blue-50 cursor-pointer text-xs text-gray-700 border-b border-gray-100 last:border-b-0 transition-colors" onclick="selectLocation('${location}')">
+    <div class="px-4 py-2 hover:bg-blue-50 cursor-pointer text-xs text-gray-700 border-b border-gray-100 last:border-b-0 transition-colors" onclick="selectLocation('₹{location}')">
       <div class="flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
         </svg>
-        <span>${location}</span>
+        <span>₹{location}</span>
       </div>
     </div>
   `).join('');
@@ -1031,15 +1031,15 @@ function redirectToWhatsApp() {
   message += '*Trip Details:*\n';
   
   if (location) {
-    message += `📍 *Destination:* ${location}\n`;
+    message += `📍 *Destination:* ₹{location}\n`;
   }
   
   if (formattedDate) {
-    message += `📅 *Travel Date:* ${formattedDate}\n`;
+    message += `📅 *Travel Date:* ₹{formattedDate}\n`;
   }
   
   if (price) {
-    message += `💰 *Budget:* ₹${price}\n`;
+    message += `💰 *Budget:* ₹₹{price}\n`;
   }
   
   message += '\nPlease help me plan my trip! Thank you.';
@@ -1051,7 +1051,7 @@ function redirectToWhatsApp() {
   const whatsappNumber = '917025550750'; // Format: country code + number (no + or spaces)
   
   // Create WhatsApp URL
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/₹{whatsappNumber}?text=₹{encodedMessage}`;
   
   // Open WhatsApp
   window.open(whatsappUrl, '_blank');
@@ -1060,9 +1060,9 @@ function redirectToWhatsApp() {
 // Function to open WhatsApp for visa enquiries
 function openWhatsAppVisa(visaType) {
   const whatsappNumber = '917025550750';
-  const message = `Hi! I'm interested in learning more about the ${visaType}. Can you provide more details?`;
+  const message = `Hi! I'm interested in learning more about the ₹{visaType}. Can you provide more details?`;
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/₹{whatsappNumber}?text=₹{encodedMessage}`;
   window.open(whatsappUrl, '_blank');
 }
 
@@ -1154,15 +1154,15 @@ function renderFeaturedDestinations() {
   
   if (grid) {
     grid.innerHTML = randomDestinations.map((dest, index) => `
-      <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('${dest.name}')" style="animation-delay: ${index * 0.1}s;">
-        <img loading="lazy" src="${dest.image}" class="w-full h-full object-cover" />
+      <div class="destination-card group w-full max-w-[280px] h-[360px] rounded-[22px] overflow-hidden relative shadow-xl hover:-translate-y-1 transition-transform duration-200 cursor-pointer" onclick="openDestinationWhatsApp('₹{dest.name}')" style="animation-delay: ₹{index * 0.1}s;">
+        <img loading="lazy" src="₹{dest.image}" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
         <div class="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
         </div>
         <div class="absolute bottom-5 left-5 right-5 text-white">
-          <h3 class="text-[16px] font-semibold leading-tight">${dest.name}</h3>
-          <p class="text-[12px] mt-1 opacity-90 leading-snug">${dest.description}</p>
+          <h3 class="text-[16px] font-semibold leading-tight">₹{dest.name}</h3>
+          <p class="text-[12px] mt-1 opacity-90 leading-snug">₹{dest.description}</p>
         </div>
       </div>
     `).join('');
@@ -1180,14 +1180,14 @@ function renderPerfectTripDestinations() {
   
   if (grid) {
     grid.innerHTML = selectedPackages.map((pkg, index) => `
-      <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group cursor-pointer" onclick="openDestinationWhatsApp('${pkg.name}')" style="animation-delay: ${index * 0.1}s;">
-        <img loading="lazy" src="${pkg.image}" class="w-full h-full object-cover" />
+      <div class="perfect-trip-card relative overflow-hidden rounded-3xl h-[250px] sm:h-[300px] shadow-lg group cursor-pointer" onclick="openDestinationWhatsApp('₹{pkg.name}')" style="animation-delay: ₹{index * 0.1}s;">
+        <img loading="lazy" src="₹{pkg.image}" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-700 text-xl">↗</div>
         <div class="absolute bottom-4 left-4 text-white">
-          <h3 class="text-xl font-bold">${pkg.name}</h3>
-          <p class="text-xs mt-1 opacity-90">${pkg.description}</p>
-          <p class="text-xs mt-2 opacity-75">🎯 ${pkg.theme}</p>
+          <h3 class="text-xl font-bold">₹{pkg.name}</h3>
+          <p class="text-xs mt-1 opacity-90">₹{pkg.description}</p>
+          <p class="text-xs mt-2 opacity-75">🎯 ₹{pkg.theme}</p>
         </div>
       </div>
     `).join('');
@@ -1203,9 +1203,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to send destination inquiry via WhatsApp
 function openDestinationWhatsApp(destination) {
   const whatsappNumber = '917510197110';
-  const message = `Hi Emaara! 🌍 I'm interested in exploring ${destination}. Can you help me plan a trip to this amazing destination? Please share details about packages, best time to visit, and pricing. Thank you!`;
+  const message = `Hi Emaara! 🌍 I'm interested in exploring ₹{destination}. Can you help me plan a trip to this amazing destination? Please share details about packages, best time to visit, and pricing. Thank you!`;
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/₹{whatsappNumber}?text=₹{encodedMessage}`;
   window.open(whatsappUrl, '_blank');
 }
 
@@ -1224,11 +1224,11 @@ function sendContactMessage() {
   
   // Create message for WhatsApp
   const whatsappNumber = '917025550750';
-  const whatsappMessage = `*📋 Contact Form Submission*\n\n*Email:* ${email}\n*Phone:* ${phone}\n*Address:* ${address}\n\n*Message:*\n${message}`;
+  const whatsappMessage = `*📋 Contact Form Submission*\n\n*Email:* ₹{email}\n*Phone:* ₹{phone}\n*Address:* ₹{address}\n\n*Message:*\n₹{message}`;
   const encodedMessage = encodeURIComponent(whatsappMessage);
   
   // Open WhatsApp with the message
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/₹{whatsappNumber}?text=₹{encodedMessage}`;
   window.open(whatsappUrl, '_blank');
   
   // Clear the form
